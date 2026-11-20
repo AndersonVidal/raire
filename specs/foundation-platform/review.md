@@ -1,11 +1,12 @@
-# foundation-platform â€” review
+# foundation-platform — review
 
-**Status:** nÃ£o iniciado  
+**Status:** não iniciado  
 **Spec:** `spec.md`  
 **Dono:** Victor  
-**PR:** â€”  
-**Commit:** â€”  
-**Data:** â€”
+**Checklist de review:** `docs/status/2026-11-20-foundation-review-checklist.md`  
+**PR:** —  
+**Commit:** —  
+**Data:** —
 
 ## Veredito
 
@@ -15,26 +16,26 @@
 
 | Gate | Veredito | Revisor | Data |
 | --- | --- | --- | --- |
-| cÃ³digo | pendente | â€” | â€” |
-| arquitetura | pendente | â€” | â€” |
-| seguranÃ§a/privacidade | pendente | Felipe | â€” |
-| trust & safety | pendente | Felipe | â€” |
-| QA | pendente | Felipe | â€” |
-| produto | pendente | Anderson | â€” |
+| código | pendente | — | — |
+| arquitetura | pendente | — | — |
+| segurança/privacidade | pendente | Felipe | — |
+| trust & safety | pendente | Felipe | — |
+| QA | pendente | Felipe | — |
+| produto | pendente | Anderson | — |
 
 ## Bloqueios
 
-- Nenhum atÃ© a implementaÃ§Ã£o.
+- Nenhum até a implementação.
 
-## SugestÃµes
+## Sugestões
 
-- Nenhuma atÃ© a implementaÃ§Ã£o.
+- Nenhuma até a implementação.
 
 ## Riscos residuais
 
-- Spec ainda em revisÃ£o; requisitos podem mudar.
+- Spec ainda em revisão; requisitos podem mudar.
 
 ## O que o humano deve olhar
 
-- AprovaÃ§Ã£o da spec antes de qualquer cÃ³digo.
-- QuestÃµes abertas em `docs/product/open-questions.md`.
+- Aprovação da spec antes de qualquer código.
+- Questões abertas em `docs/product/open-questions.md`.

@@ -16,8 +16,10 @@
 5. `docs/architecture/ranking-and-fairness.md` — pipeline, score e governança.
 6. `docs/process/pipeline.md` — fluxo, gates e DoR/DoD.
 7. `docs/team/raci.md` — decisões e independência.
-8. `specs/foundation-platform/`, `specs/local-discovery/`, `specs/fair-visibility/`.
-9. `docs/product/open-questions.md` — Q-07, Q-44–Q-50.
+8. `docs/status/2026-11-20-decision-draft.md` — recomendação para Q-07/Q-44–Q-50.
+9. `docs/status/2026-11-20-foundation-review-checklist.md` — o que revisar na spec foundation.
+10. `specs/foundation-platform/`, `specs/local-discovery/`, `specs/fair-visibility/`.
+11. `docs/product/open-questions.md` — Q-07, Q-44–Q-50.
 
 ---
 

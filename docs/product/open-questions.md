@@ -5,6 +5,8 @@
 **Fonte:** PRD v1.0, seção 16  
 **Uso:** desbloquear planejamento e implementação sem inventar requisito.
 
+> Recomendações técnicas para Q-07 e Q-44–Q-50: `docs/status/2026-11-20-decision-draft.md`. Ainda **não são decisões**; aguardam aprovação humana.
+
 ---
 
 ## 1. Classificação

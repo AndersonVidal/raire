@@ -16,7 +16,9 @@ O que está pronto:
 
 Status detalhado: [docs/status/2026-11-20-planning.md](docs/status/2026-11-20-planning.md).  
 QA documental: [docs/status/2026-11-20-qa-documental.md](docs/status/2026-11-20-qa-documental.md).  
-Review de planejamento: [docs/status/2026-11-20-review-planning.md](docs/status/2026-11-20-review-planning.md).
+Review de planejamento: [docs/status/2026-11-20-review-planning.md](docs/status/2026-11-20-review-planning.md).  
+Minuta de decisão: [docs/status/2026-11-20-decision-draft.md](docs/status/2026-11-20-decision-draft.md).  
+Review da spec foundation: [docs/status/2026-11-20-foundation-review-checklist.md](docs/status/2026-11-20-foundation-review-checklist.md).
 
 O que vem depois:
 

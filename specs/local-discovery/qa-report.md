@@ -1,58 +1,58 @@
-# local-discovery â€” QA report
+# local-discovery — QA report
 
-**Status:** nÃ£o iniciado  
+**Status:** não iniciado  
 **Spec:** `spec.md`  
 **Dono:** Victor  
-**Commit:** â€”  
-**Data:** â€”  
-**Ambiente:** â€”
+**Commit:** —  
+**Data:** —  
+**Ambiente:** —
 
-## 1. SumÃ¡rio
+## 1. Sumário
 
-- cenÃ¡rios planejados: ver `acceptance.md`
-- cenÃ¡rios executados: 0
+- cenários planejados: ver `acceptance.md`
+- cenários executados: 0
 - verdes: 0
 - falhas: 0
-- bloqueios: implementaÃ§Ã£o nÃ£o iniciada
+- bloqueios: implementação não iniciada
 
 ## 2. Matriz de aceite
 
-A matriz estÃ¡ em `acceptance.md`. O status serÃ¡ atualizado na execuÃ§Ã£o.
+A matriz está em `acceptance.md`. O status será atualizado na execução.
 
 ## 3. Testes executados
 
 ```txt
-comando: â€”
-resultado: nÃ£o executado
+comando: —
+resultado: não executado
 ```
 
 ## 4. Acessibilidade
 
-- axe: nÃ£o executado
-- teclado: nÃ£o executado
-- leitor de tela: nÃ£o executado
-- 360 px: nÃ£o executado
-- contraste: nÃ£o executado
+- axe: não executado
+- teclado: não executado
+- leitor de tela: não executado
+- 360 px: não executado
+- contraste: não executado
 
 ## 5. Performance
 
-- busca p95: nÃ£o medida
-- API p95: nÃ£o medida
-- LCP: nÃ£o medido
+- busca p95: não medida
+- API p95: não medida
+- LCP: não medido
 
 ## 6. Fairness
 
-- cenÃ¡rios: ver `acceptance.md`
-- resultado: nÃ£o executado
+- cenários: ver `acceptance.md`
+- resultado: não executado
 
 ## 7. Falhas conhecidas
 
-Nenhuma; implementaÃ§Ã£o nÃ£o iniciada.
+Nenhuma; implementação não iniciada.
 
 ## 8. Riscos residuais
 
-- Spec em revisÃ£o.
+- Spec em revisão.
 
-## 9. ConclusÃ£o
+## 9. Conclusão
 
 `pendente`

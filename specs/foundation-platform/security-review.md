@@ -1,18 +1,18 @@
-# foundation-platform â€” security review
+# foundation-platform — security review
 
-**Status:** nÃ£o iniciado  
+**Status:** não iniciado  
 **Spec:** `spec.md`  
 **Dono:** Victor  
 **Revisor:** Felipe  
-**PR:** â€”  
-**Commit:** â€”  
-**Data:** â€”
+**PR:** —  
+**Commit:** —  
+**Data:** —
 
 ## Veredito
 
 `pendente`
 
-## 1. SuperfÃ­cie avaliada
+## 1. Superfície avaliada
 
 - auth:
 - authz:
@@ -20,32 +20,32 @@
 - upload:
 - admin:
 - eventos/logs:
-- dependÃªncias:
+- dependências:
 
 ## 2. Checklist
 
-- [ ] autenticaÃ§Ã£o/sessÃ£o;
-- [ ] autorizaÃ§Ã£o por recurso;
+- [ ] autenticação/sessão;
+- [ ] autorização por recurso;
 - [ ] CSRF/CSP/headers;
 - [ ] rate limit;
-- [ ] validaÃ§Ã£o/encoding;
+- [ ] validação/encoding;
 - [ ] segredos;
 - [ ] PII em log/evento;
-- [ ] localizaÃ§Ã£o/contato;
-- [ ] retenÃ§Ã£o/consentimento;
-- [ ] dependÃªncias;
+- [ ] localização/contato;
+- [ ] retenção/consentimento;
+- [ ] dependências;
 - [ ] auditoria;
 - [ ] incidente.
 
 ## 3. Bloqueios
 
-- Nenhum atÃ© a implementaÃ§Ã£o.
+- Nenhum até a implementação.
 
 ## 4. Riscos residuais
 
-- Spec em revisÃ£o.
+- Spec em revisão.
 
 ## 5. O que o humano deve olhar
 
-- AprovaÃ§Ã£o da spec.
-- Modelo de ameaÃ§as em `docs/security/threat-model.md`.
+- Aprovação da spec.
+- Modelo de ameaças em `docs/security/threat-model.md`.

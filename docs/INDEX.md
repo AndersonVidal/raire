@@ -16,6 +16,8 @@ Este documento é o índice central da base de conhecimento do projeto RAIRE. El
 6. [`docs/status/2026-11-20-planning.md`](status/2026-11-20-planning.md) — status detalhado.
 7. [`docs/status/2026-11-20-qa-documental.md`](status/2026-11-20-qa-documental.md) — QA da organização.
 8. [`docs/status/2026-11-20-review-planning.md`](status/2026-11-20-review-planning.md) — review de planejamento.
+9. [`docs/status/2026-11-20-decision-draft.md`](status/2026-11-20-decision-draft.md) — recomendação para Q-07/Q-44–Q-50.
+10. [`docs/status/2026-11-20-foundation-review-checklist.md`](status/2026-11-20-foundation-review-checklist.md) — o que revisar na spec foundation.
 
 ---
 
