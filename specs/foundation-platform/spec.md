@@ -300,11 +300,11 @@ GET    /v1/readyz
 
 ### 7.2 Entidades
 
-- `accounts`, `sessions`, `email_tokens`, `consents`, `account_requests`
+- `accounts`, `sessions`, `email_tokens`, `mfa_recovery_codes`, `consents`, `account_requests`
 - `professional_profiles`, `profile_categories`, `portfolio_items`
 - `categories`, `category_synonyms`
 - `verifications` (shell)
-- `audit_events`, `outbox_events`, `feature_flags`
+- `audit_events`, `outbox_events`, `feature_flags`, `idempotency_keys`
 
 ### 7.3 Payloads
 

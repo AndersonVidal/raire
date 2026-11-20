@@ -4,30 +4,51 @@ RAIRE é uma plataforma de descoberta e conexão entre profissionais autônomos 
 
 ## Estado atual
 
-**Fase de planejamento concluída para a fundação. Nenhum código de produto foi implementado ainda.**
+**Fundação implementada localmente, em review. Ainda não há deploy, web, Postgres de produção ou piloto.**
 
 O que está pronto:
 
-- PRD revisado (v1.0);
-- decisões Q-01..Q-50 aprovadas;
-- `foundation-platform` aprovada;
+- PRD revisado (v1.0), decisões Q-01..Q-50 e `foundation-platform` aprovada;
 - harness de agentes, comandos e gates;
-- specs com critérios de aceite, tickets e planos de implementação;
-- arquitetura, ADRs, segurança, privacidade, métricas e roadmap;
-- pipeline de trabalho e divisão de tarefas entre Victor, Anderson e Felipe.
+- monólito modular em Go com SQLite local/CI;
+- conta, sessão, CSRF, rate limit, MFA, confirmação e reset;
+- catálogo com sinônimos e administração;
+- perfil, área, disponibilidade, contato, localização cifrada e suspensão;
+- auditoria append-only, outbox, feature flags, health/readiness e logs JSON;
+- OpenAPI, runbook, testes automatizados e evidência;
+- specs de web, discovery, pedidos, confiança e fairness em revisão.
 
-Status detalhado: [docs/status/2026-11-20-planning.md](docs/status/2026-11-20-planning.md).  
-QA documental: [docs/status/2026-11-20-qa-documental.md](docs/status/2026-11-20-qa-documental.md).  
-Review de planejamento: [docs/status/2026-11-20-review-planning.md](docs/status/2026-11-20-review-planning.md).  
-Minuta de decisão: [docs/status/2026-11-20-decision-draft.md](docs/status/2026-11-20-decision-draft.md).  
-Review da spec foundation: [docs/status/2026-11-20-foundation-review-checklist.md](docs/status/2026-11-20-foundation-review-checklist.md).
+Status de implementação: [docs/status/2026-11-20-foundation-implementation.md](docs/status/2026-11-20-foundation-implementation.md).  
+Follow-ups: [docs/status/2026-11-20-foundation-follow-ups.md](docs/status/2026-11-20-foundation-follow-ups.md).  
+Runbook: [docs/runbooks/foundation.md](docs/runbooks/foundation.md).  
+QA documental: [docs/status/2026-11-20-qa-documental.md](docs/status/2026-11-20-qa-documental.md).
 
 O que vem depois:
 
-1. implementar `FND-01`..`FND-19` na ordem do task board;
-2. revisar e aprovar as demais specs;
-3. gates de review, QA, segurança e trust & safety;
-4. evidências e preparação de piloto.
+1. revisar a fundação (`FND-01..FND-19`) com Anderson e Felipe;
+2. implementar portfólio, privacidade/direitos e web (`FND-07/08/11/12/13/18`);
+3. adaptar Postgres/PostGIS, worker de outbox e rate limit compartilhado;
+4. gates de review, QA, segurança e trust & safety;
+5. evidências finais e preparação de piloto (bloqueada até DPIA/jurídico).
+
+## Como rodar a fundação
+
+```bash
+go test ./... -count=1
+RAIRE_ENV=dev go run ./cmd/raire
+```
+
+No PowerShell: `$env:RAIRE_ENV='dev'; go run ./cmd/raire`.
+
+O servidor sobe em `http://localhost:8080`, aplica migrations/seed e expõe
+`/v1/healthz` e `/v1/readyz`. O contrato está em [`api/openapi.yaml`](api/openapi.yaml)
+e o passo a passo em [`docs/runbooks/foundation.md`](docs/runbooks/foundation.md).
+
+Em dev, o token de confirmação aparece no header `X-Dev-Confirm-Token`. Nunca
+rode com `RAIRE_ENV=dev` em produção; sem `RAIRE_ENV`, o servidor assume o modo
+seguro de produção e exige `RAIRE_ENCRYPTION_KEY`.
+
+
 
 ## Comece por aqui
 

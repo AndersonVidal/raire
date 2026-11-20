@@ -16,4 +16,4 @@ Protocolos e resultados de experimentos.
 
 ## Estado
 
-Nenhum experimento iniciado. Implementação não iniciada.
+Nenhum experimento iniciado. Fundação técnica implementada localmente; pesquisa e piloto não iniciados.

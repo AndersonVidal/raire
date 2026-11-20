@@ -48,8 +48,11 @@ accounts
   role (client|professional|operator|admin),
   email_verified_at, contact_email, contact_phone, contact_phone_verified_at,
   contact_preference (platform|email|phone),
-  mfa_secret, mfa_recovery_codes_hash,
+  mfa_secret, mfa_recovery_codes_hash, -- legado; tabela mfa_recovery_codes é a fonte de verdade
   suspended_at, deleted_at, created_at, updated_at
+
+mfa_recovery_codes
+  id, account_id, code_hash (unique por conta), used_at, created_at
 
 sessions
   id, account_id, token_hash (unique), csrf_token_hash,
@@ -108,7 +111,7 @@ professional_profiles
   availability_windows_json, availability_note,
   contact_preference_override (nullable),
   verification (unverified|contact_verified|identity_verified), -- cache derivado de verifications
-  published_at, created_at, updated_at, suspended_at, suspended_reason
+  published_at, created_at, updated_at, suspended_at, suspended_reason, version
 
 profile_categories
   profile_id, category_id, primary (bool)
@@ -132,6 +135,8 @@ portfolio_items
 - localização precisa cifrada (AES-256-GCM), com chave fora do banco e expiração máxima de 90 dias;
 - `precise_lat_enc/lng_enc` nunca entram no read model público, log ou evento;
 - `verification` é cache derivado de `verifications`; a fonte de verdade é a tabela;
+- `version` é usada em update condicional para impedir lost update entre dono e operação;
+- recovery codes usam hash e consumo atômico em `mfa_recovery_codes`;
 - portfólio não é experiência verificada;
 - imagem de portfólio: JPG/PNG/WebP, até 2 MB, metadados removidos, storage isolado.
 
@@ -321,8 +326,9 @@ fairness_policy 1--N visibility_event
 ## 6. Migrations e seed
 
 - `0001_init.sql`: tabelas base, constraints e índices.
-- `0002_catalog_seed.sql`: categorias, sinônimos e bairros sintéticos.
-- `0003_admin_seed.sql`: admin de desenvolvimento (não produção).
+- `0002_platform_seed.sql`: categorias, sinônimos e feature flags.
+- `0003_profile_version.sql`: controle de concorrência otimista do perfil.
+- `0004_mfa_recovery_codes.sql`: recovery codes com consumo atômico.
 - Toda migration tem `up` e plano de rollback lógico.
 - Seed idempotente por chave natural (`slug`, `email`).
 - Teste em banco vazio e com seed.

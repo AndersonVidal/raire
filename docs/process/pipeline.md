@@ -435,13 +435,13 @@ Checklist detalhado em `docs/process/ci-cd.md`.
 
 ## 16. Primeiro ciclo de trabalho
 
-**Status:** fundação aprovada em 2026-11-20; implementação pode começar.
+**Status:** fundação implementada localmente em 2026-11-20 e em review; sem deploy ou piloto.
 
 | Ordem | Trabalho | Dono | Status |
 | --- | --- | --- | --- |
 | 1 | Revisar PRD e decidir Q-01..Q-50 | Todos | concluído |
 | 2 | Revisar e aprovar foundation-platform | Victor + humano | concluído |
-| 3 | Implementar FND-01..FND-19 | Victor/Anderson/Felipe | próximo |
+| 3 | Implementar FND-01..FND-19 | Victor/Anderson/Felipe | em andamento (fatia de Victor pronta; portfólio, direitos, web e QA independente pendentes) |
 | 4 | Revisar e aprovar web-experience | Anderson | pendente |
 | 5 | Revisar e aprovar local-discovery e service-request | Victor/Anderson | pendente |
 | 6 | Revisar e aprovar trust-reputation | Felipe | pendente |

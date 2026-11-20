@@ -28,4 +28,4 @@ Quem implementa não aprova. Agente de review não edita o código revisado.
 
 ## Estado
 
-Fase de planejamento. Nenhum código implementado. Implementação bloqueada até aprovação humana das specs.
+Fase de fundação implementada localmente e em review. Não há deploy, Postgres de produção, web ou piloto. O fluxo de review continua obrigatório.

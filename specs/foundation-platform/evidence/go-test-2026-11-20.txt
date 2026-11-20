@@ -1,0 +1,190 @@
+?   	github.com/raire/raire/cmd/raire	[no test files]
+?   	github.com/raire/raire/db	[no test files]
+=== RUN   TestCatalogSynonymsAndInactive
+--- PASS: TestCatalogSynonymsAndInactive (0.98s)
+=== RUN   TestAdminCreatesAndUpdatesCategoryWithAudit
+--- PASS: TestAdminCreatesAndUpdatesCategoryWithAudit (0.91s)
+=== RUN   TestAdminSuspendsReactivatesAndAudits
+--- PASS: TestAdminSuspendsReactivatesAndAudits (0.72s)
+=== RUN   TestAdminPaginationAndFilters
+--- PASS: TestAdminPaginationAndFilters (0.75s)
+=== RUN   TestFeatureFlags
+--- PASS: TestFeatureFlags (0.50s)
+=== RUN   TestHealthAndReadiness
+--- PASS: TestHealthAndReadiness (0.50s)
+=== RUN   TestSignupConfirmLoginLogout
+--- PASS: TestSignupConfirmLoginLogout (0.21s)
+=== RUN   TestDuplicateSignupIsGeneric
+--- PASS: TestDuplicateSignupIsGeneric (0.21s)
+=== RUN   TestConfirmTokenSingleUseAndExpiry
+--- PASS: TestConfirmTokenSingleUseAndExpiry (0.48s)
+=== RUN   TestLoginRotatesSession
+--- PASS: TestLoginRotatesSession (0.32s)
+=== RUN   TestPasswordReset
+--- PASS: TestPasswordReset (0.26s)
+=== RUN   TestPasswordChangeRevokesOtherSessions
+--- PASS: TestPasswordChangeRevokesOtherSessions (0.25s)
+=== RUN   TestOperatorRequiresMFAAndRecovery
+--- PASS: TestOperatorRequiresMFAAndRecovery (0.21s)
+=== RUN   TestDraftIsNotPublic
+--- PASS: TestDraftIsNotPublic (0.14s)
+=== RUN   TestConsentVersioningAndRevocation
+--- PASS: TestConsentVersioningAndRevocation (0.08s)
+=== RUN   TestAccountCanBeClientAndProfessional
+--- PASS: TestAccountCanBeClientAndProfessional (0.07s)
+=== RUN   TestVerificationBadgeIsHonest
+--- PASS: TestVerificationBadgeIsHonest (0.09s)
+=== RUN   TestFunnelMetrics
+--- PASS: TestFunnelMetrics (0.07s)
+=== RUN   TestPublicTextRejectsPII
+--- PASS: TestPublicTextRejectsPII (0.08s)
+=== RUN   TestPhoneVerificationSurvivesSameNumber
+--- PASS: TestPhoneVerificationSurvivesSameNumber (0.08s)
+=== RUN   TestResetIdempotency
+--- PASS: TestResetIdempotency (0.08s)
+=== RUN   TestOpenAPIContract
+--- PASS: TestOpenAPIContract (0.00s)
+=== RUN   TestPublishedProfileHasNoPII
+--- PASS: TestPublishedProfileHasNoPII (0.09s)
+=== RUN   TestRemoteProfileWithoutArea
+--- PASS: TestRemoteProfileWithoutArea (0.08s)
+=== RUN   TestHybridWithoutAreaIsRejected
+--- PASS: TestHybridWithoutAreaIsRejected (0.08s)
+=== RUN   TestEmailNotConfirmedCannotPublish
+--- PASS: TestEmailNotConfirmedCannotPublish (0.11s)
+=== RUN   TestPublishRequiresCategory
+--- PASS: TestPublishRequiresCategory (0.11s)
+=== RUN   TestRadiusOutOfRange
+--- PASS: TestRadiusOutOfRange (0.09s)
+=== RUN   TestInvalidAvailabilityIsRejected
+--- PASS: TestInvalidAvailabilityIsRejected (0.07s)
+=== RUN   TestPauseResumeProfile
+--- PASS: TestPauseResumeProfile (0.09s)
+=== RUN   TestCategoryDeactivatedHidesProfile
+--- PASS: TestCategoryDeactivatedHidesProfile (0.12s)
+=== RUN   TestContactPreferenceResolution
+--- PASS: TestContactPreferenceResolution (0.10s)
+=== RUN   TestPreciseLocationEncryptedAndPurged
+--- PASS: TestPreciseLocationEncryptedAndPurged (0.07s)
+=== RUN   TestPreviewOwnership
+--- PASS: TestPreviewOwnership (0.11s)
+=== RUN   TestCSRFRequired
+--- PASS: TestCSRFRequired (0.09s)
+=== RUN   TestSignupRateLimit
+--- PASS: TestSignupRateLimit (0.08s)
+=== RUN   TestLoginRateLimit
+--- PASS: TestLoginRateLimit (0.13s)
+=== RUN   TestResetRateLimit
+--- PASS: TestResetRateLimit (0.05s)
+=== RUN   TestResendRateLimit
+--- PASS: TestResendRateLimit (0.17s)
+=== RUN   TestSignupIdempotency
+--- PASS: TestSignupIdempotency (0.08s)
+=== RUN   TestConfirmIdempotency
+--- PASS: TestConfirmIdempotency (0.06s)
+=== RUN   TestLogsHaveCorrelationAndNoPII
+--- PASS: TestLogsHaveCorrelationAndNoPII (0.08s)
+PASS
+ok  	github.com/raire/raire/internal/api	9.157s
+?   	github.com/raire/raire/internal/app	[no test files]
+=== RUN   TestDependencyRules
+--- PASS: TestDependencyRules (4.47s)
+PASS
+ok  	github.com/raire/raire/internal/architecture	5.109s
+?   	github.com/raire/raire/internal/catalog/adapters/sqlite	[no test files]
+?   	github.com/raire/raire/internal/catalog/app	[no test files]
+=== RUN   TestSlugAndNormalization
+--- PASS: TestSlugAndNormalization (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/catalog/domain	0.519s
+?   	github.com/raire/raire/internal/contracts	[no test files]
+?   	github.com/raire/raire/internal/directory/adapters/catalog	[no test files]
+?   	github.com/raire/raire/internal/directory/adapters/identity	[no test files]
+=== RUN   TestProfileUpdateVersionConflict
+--- PASS: TestProfileUpdateVersionConflict (0.27s)
+PASS
+ok  	github.com/raire/raire/internal/directory/adapters/sqlite	1.504s
+?   	github.com/raire/raire/internal/directory/app	[no test files]
+=== RUN   TestValidateWindows
+--- PASS: TestValidateWindows (0.00s)
+=== RUN   TestValidateServiceArea
+--- PASS: TestValidateServiceArea (0.00s)
+=== RUN   TestResolveContact
+--- PASS: TestResolveContact (0.00s)
+=== RUN   TestProfileValidateForPublish
+--- PASS: TestProfileValidateForPublish (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/directory/domain	0.653s
+?   	github.com/raire/raire/internal/identity/adapters/sqlite	[no test files]
+?   	github.com/raire/raire/internal/identity/app	[no test files]
+=== RUN   TestEmailAndPasswordValidation
+--- PASS: TestEmailAndPasswordValidation (0.00s)
+=== RUN   TestAccountDerivedFields
+--- PASS: TestAccountDerivedFields (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/identity/domain	0.277s
+=== RUN   TestWriteAndList
+--- PASS: TestWriteAndList (0.07s)
+PASS
+ok  	github.com/raire/raire/internal/platform/audit	1.317s
+?   	github.com/raire/raire/internal/platform/clock	[no test files]
+=== RUN   TestLoadDevDefaults
+--- PASS: TestLoadDevDefaults (0.00s)
+=== RUN   TestLoadProductionRequiresKey
+--- PASS: TestLoadProductionRequiresKey (0.00s)
+=== RUN   TestLoadDefaultsToProductionSafe
+--- PASS: TestLoadDefaultsToProductionSafe (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/platform/config	0.752s
+=== RUN   TestMigrateAndSeedIdempotent
+--- PASS: TestMigrateAndSeedIdempotent (0.26s)
+=== RUN   TestAuditAppendOnly
+--- PASS: TestAuditAppendOnly (0.07s)
+PASS
+ok  	github.com/raire/raire/internal/platform/db	1.664s
+=== RUN   TestFlags
+--- PASS: TestFlags (0.06s)
+PASS
+ok  	github.com/raire/raire/internal/platform/flags	1.555s
+=== RUN   TestCorrelationAndError
+--- PASS: TestCorrelationAndError (0.00s)
+=== RUN   TestDecodeJSONRejectsUnknownAndTrailing
+--- PASS: TestDecodeJSONRejectsUnknownAndTrailing (0.00s)
+=== RUN   TestClientIP
+--- PASS: TestClientIP (0.00s)
+=== RUN   TestCorrelationID
+--- PASS: TestCorrelationID (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/platform/httpx	1.038s
+?   	github.com/raire/raire/internal/platform/id	[no test files]
+=== RUN   TestStore
+--- PASS: TestStore (0.04s)
+PASS
+ok  	github.com/raire/raire/internal/platform/idempotency	1.505s
+?   	github.com/raire/raire/internal/platform/logging	[no test files]
+=== RUN   TestRegistry
+--- PASS: TestRegistry (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/platform/metrics	0.630s
+=== RUN   TestPublishAndProcess
+--- PASS: TestPublishAndProcess (0.04s)
+PASS
+ok  	github.com/raire/raire/internal/platform/outbox	0.837s
+=== RUN   TestLimiter
+--- PASS: TestLimiter (0.00s)
+=== RUN   TestLimiterReset
+--- PASS: TestLimiterReset (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/platform/ratelimit	0.537s
+=== RUN   TestHashPasswordRoundTrip
+--- PASS: TestHashPasswordRoundTrip (0.02s)
+=== RUN   TestTOTP
+--- PASS: TestTOTP (0.00s)
+=== RUN   TestCipher
+--- PASS: TestCipher (0.00s)
+=== RUN   TestRedact
+--- PASS: TestRedact (0.00s)
+=== RUN   TestMask
+--- PASS: TestMask (0.00s)
+PASS
+ok  	github.com/raire/raire/internal/platform/security	0.614s

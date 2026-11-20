@@ -28,7 +28,7 @@ O repositório funciona como:
 
 # Estado Atual
 
-**Fase: organização e planejamento. Nenhum código de produto foi implementado ainda.**
+**Fase: fundação implementada localmente e em review. Não há deploy, piloto ou produção.**
 
 O PRD foi revisado para a versão 1.0 (`docs/product/prd.md`) e o harness foi montado a partir do repositório `raire_old`, com adaptações:
 
@@ -38,9 +38,9 @@ O PRD foi revisado para a versão 1.0 (`docs/product/prd.md`) e o harness foi mo
 - specs com critérios de aceite, tickets e planos de implementação;
 - pipeline de trabalho, RACI e handoffs por pessoa;
 - templates de review, QA e segurança;
-- nenhuma implementação, migration ou teste executado.
+- fundação em Go + SQLite, com API `/v1`, migrations, seed, testes, OpenAPI e runbook.
 
-A preparação da implementação foi autorizada pelo waiver de planejamento (`docs/process/waivers/2026-11-20-mvp-planning.md`). A `foundation-platform` foi aprovada em 2026-11-20 e as decisões Q-01..Q-50 foram registradas; as demais specs seguem em revisão. **Ainda não há código de produto implementado.** O waiver não autoriza piloto ou produção.
+A preparação da implementação foi autorizada pelo waiver de planejamento (`docs/process/waivers/2026-11-20-mvp-planning.md`). A `foundation-platform` foi aprovada em 2026-11-20 e as decisões Q-01..Q-50 foram registradas; as demais specs seguem em revisão. A fatia de Victor (`FND-01..06`, `FND-14..16` e dependências de `FND-09/10/17`) foi implementada localmente em 2026-11-20 e está em review. **Não há deploy, Postgres de produção, web ou piloto.** O waiver não autoriza piloto ou produção.
 
 ---
 

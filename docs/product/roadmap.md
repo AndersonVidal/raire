@@ -69,7 +69,7 @@ Transformar o PRD revisado em specs, tickets e pipeline executáveis.
 - [x] Dependências entre specs e tickets explícitas.
 - [x] Donos definidos para todos os tickets.
 - [x] Pipeline e gates documentados.
-- [x] Nenhum código implementado.
+- [x] Nenhum código de produto antes da aprovação da spec (a fundação foi implementada depois, em 2026-11-20).
 - [x] Aprovação humana para iniciar F1 (foundation).
 
 ---

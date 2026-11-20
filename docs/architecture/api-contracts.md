@@ -78,16 +78,15 @@ Um usuário pode ser cliente e profissional; o perfil profissional é recurso se
 }
 ```
 
-Resposta `201`:
+Resposta `202`:
 
 ```json
-{
-  "account": { "id": "acc_...", "email": "ana@example.test", "email_verified": false },
-  "dev_confirm_token": "..." 
-}
+{ "status": "ok" }
 ```
 
-`dev_confirm_token` só existe em modo dev/teste. Em produção, o token vai por e-mail.
+A resposta é **idêntica** para conta nova e e-mail existente. Em dev/teste, o
+token de confirmação de uma conta nova vai no header `X-Dev-Confirm-Token`; em
+produção, por e-mail. Nunca retorne o `account` no signup: isso enumera contas.
 
 ### POST `/v1/auth/login`
 

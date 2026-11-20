@@ -85,29 +85,30 @@
 
 | ID | Tarefa | Dono | Tam. | Depende de | Aceite | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| FND-01 | Estrutura modular, contratos e dependências | Victor | M | PLAN-10 | AC-37 | pronto |
-| FND-02 | Modelo de dados, migrations e seed | Victor | G | FND-01 | AC-01, AC-09..AC-18, AC-21, AC-24..AC-30 | pronto |
-| FND-03 | Identidade, sessão, RBAC e rate limit | Victor | G | FND-01, FND-02 | AC-01..AC-08, AC-42, AC-51 | pronto |
-| FND-04 | Confirmação de e-mail, reset, MFA e recovery codes | Victor | M | FND-03 | AC-03, AC-06, AC-08, AC-33, AC-43 | pronto |
-| FND-05 | Catálogo, sinônimos e admin | Victor | M | FND-02 | AC-17, AC-28..AC-30, AC-48 | pronto |
-| FND-06 | Perfil, área, disponibilidade e contato | Victor | G | FND-02, FND-03 | AC-09..AC-16, AC-44..AC-46, AC-54, AC-55 | pronto |
+| FND-01 | Estrutura modular, contratos e dependências | Victor | M | PLAN-10 | AC-37 | em review |
+| FND-02 | Modelo de dados, migrations e seed | Victor | G | FND-01 | AC-01, AC-09..AC-18, AC-21, AC-24..AC-30 | em review |
+| FND-03 | Identidade, sessão, RBAC e rate limit | Victor | G | FND-01, FND-02 | AC-01..AC-08, AC-42, AC-51 | em review |
+| FND-04 | Confirmação de e-mail, reset, MFA e recovery codes | Victor | M | FND-03 | AC-03, AC-06, AC-08, AC-33, AC-43 | em review |
+| FND-05 | Catálogo, sinônimos e admin | Victor | M | FND-02 | AC-17, AC-28..AC-30, AC-48 | em review |
+| FND-06 | Perfil, área, disponibilidade e contato | Victor | G | FND-02, FND-03 | AC-09..AC-16, AC-44..AC-46, AC-54, AC-55 | em review |
 | FND-07 | Portfólio profissional | Anderson | M | FND-06 | AC-24..AC-27, AC-47, AC-56 | pronto |
 | FND-08 | Privacidade e direitos | Felipe | G | FND-03, FND-06 | AC-18..AC-23, AC-58 | pronto |
-| FND-09 | Admin, suspensão e auditoria | Felipe | M | FND-03, FND-06 | AC-31..AC-33, AC-53 | pronto |
-| FND-10 | Observabilidade, health e flags | Felipe | M | FND-01 | AC-37..AC-39, AC-50 | pronto |
+| FND-09 | Admin, suspensão e auditoria | Felipe | M | FND-03, FND-06 | AC-31..AC-33, AC-53 | em review (fatia de Victor) |
+| FND-10 | Observabilidade, health e flags | Felipe | M | FND-01 | AC-37..AC-39, AC-50 | em andamento (health/logs/flags prontos) |
 | FND-11 | Web: conta | Anderson | G | FND-03, FND-04 | AC-01..AC-08, AC-34..AC-36, AC-42 | pronto |
 | FND-12 | Web: onboarding e perfil | Anderson | G | FND-06, FND-11 | AC-09..AC-16, AC-34..AC-36 | pronto |
 | FND-13 | E2E, acessibilidade e evidência | Felipe | M | FND-11, FND-12 | AC-34..AC-37, AC-57, AC-60 | pronto |
-| FND-14 | OpenAPI, README e handoff | Victor | P | todos | todos | pronto |
-| FND-15 | Segurança de conta e abuso | Victor | M | FND-03, FND-04 | AC-40..AC-44, AC-51, AC-52 | pronto |
-| FND-16 | Dados sensíveis: contato, disponibilidade e localização | Victor | M | FND-06 | AC-44, AC-45, AC-54, AC-55 | pronto |
-| FND-17 | Admin completo: catálogo, flags e direitos | Felipe | M | FND-05, FND-09 | AC-48, AC-53, AC-58, AC-59 | pronto |
+| FND-14 | OpenAPI, README e handoff | Victor | P | todos | todos | em review |
+| FND-15 | Segurança de conta e abuso | Victor | M | FND-03, FND-04 | AC-40..AC-44, AC-51, AC-52 | em review |
+| FND-16 | Dados sensíveis: contato, disponibilidade e localização | Victor | M | FND-06 | AC-44, AC-45, AC-54, AC-55 | em review |
+| FND-17 | Admin completo: catálogo, flags e direitos | Felipe | M | FND-05, FND-09 | AC-48, AC-53, AC-58, AC-59 | em andamento (catálogo/flags/paginação; direitos pendentes) |
 | FND-18 | Web: estados, termos e acessibilidade | Anderson | M | FND-11, FND-12 | AC-49, AC-57, AC-60 | pronto |
-| FND-19 | QA de hardening e segurança | Felipe | M | FND-13, FND-15..FND-18 | AC-40..AC-60 | pronto |
-| WEB-01 | Design tokens e componentes | Anderson | M | — | AC-01..AC-05 | proposto |
-| WEB-02 | Layout, navegação e estados | Anderson | M | WEB-01 | AC-06..AC-10 | proposto |
+| FND-19 | QA de hardening e segurança | Felipe | M | FND-13, FND-15..FND-18 | AC-40..AC-60 | em andamento (suite de Victor executada) |
+| WEB-01 | Design tokens e componentes | Anderson | M | — | AC-01..AC-05 | proposto || WEB-02 | Layout, navegação e estados | Anderson | M | WEB-01 | AC-06..AC-10 | proposto |
 | WEB-03 | Conta acessível | Anderson | M | WEB-02, FND-11 | AC-11..AC-13 | proposto |
 | WEB-04 | Perfil e portfólio | Anderson | M | WEB-02, FND-12, FND-07 | AC-14..AC-16, AC-21 | proposto |
+
+> **Implementação de 2026-11-20:** Victor concluiu a fatia técnica `FND-01..06`, `FND-14..16` e antecipou dependências de `FND-09` (listagem/suspensão/auditoria) e `FND-17` (categorias/flags/paginação). Tudo está em `em review`; nenhum ticket foi aprovado por IA. Anderson e Felipe devem revisar e assumir os tickets restantes.
 
 ---
 

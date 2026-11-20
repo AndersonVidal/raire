@@ -4,7 +4,9 @@
 **Ownership:** `foundation-platform`, `local-discovery`, `fair-visibility`  
 **Revisa:** arquitetura, backend, migrations, contratos, performance, fairness técnica  
 **Não aprova:** o próprio código; política de fairness sozinho  
-**Status (2026-11-20):** `foundation-platform` aprovada; decisões Q-07/Q-44–Q-50 registradas; pode iniciar `FND-01`.
+**Status (2026-11-20):** `foundation-platform` implementada localmente e em review; decisões Q-07/Q-44–Q-50 registradas; próximos passos são Postgres, outbox worker e revisão independente.
+**Implementação:** `docs/status/2026-11-20-foundation-implementation.md`  
+**Follow-ups:** `docs/status/2026-11-20-foundation-follow-ups.md`
 
 ---
 
@@ -78,17 +80,21 @@
 
 ## 4. Primeiros tickets após aprovação
 
-| Ordem | Ticket | Entrega |
-| --- | --- | --- |
-| 1 | FND-01 | estrutura modular, contratos e regras de dependência |
-| 2 | FND-02 | modelo de dados, migrations e seed |
-| 3 | FND-03 | identidade, sessão, RBAC, rate limit, CSRF |
-| 4 | FND-04 | confirmação, reset, MFA e recovery codes |
-| 5 | FND-05 | catálogo e sinônimos |
-| 6 | FND-06 | perfil, área, disponibilidade e contato |
-| 7 | FND-15 | segurança de conta e abuso |
-| 8 | FND-16 | dados sensíveis e localização |
-| 9 | LCL-01..LCL-03 | read model, retrieval e ranking baseline |
+**Status:** implementados localmente e em review; próximos são FUP-01 (Postgres), FUP-02 (outbox worker) e FUP-03 (login CSRF).
+
+| Ordem | Ticket | Entrega | Status |
+| --- | --- | --- | --- |
+| 1 | FND-01 | estrutura modular, contratos e regras de dependência | em review |
+| 2 | FND-02 | modelo de dados, migrations e seed | em review |
+| 3 | FND-03 | identidade, sessão, RBAC, rate limit, CSRF | em review |
+| 4 | FND-04 | confirmação, reset, MFA e recovery codes | em review |
+| 5 | FND-05 | catálogo e sinônimos | em review |
+| 6 | FND-06 | perfil, área, disponibilidade e contato | em review |
+| 7 | FND-15 | segurança de conta e abuso | em review |
+| 8 | FND-16 | dados sensíveis e localização | em review |
+| 9 | FUP-01 | adaptador PostgreSQL/PostGIS | pendente |
+| 10 | FUP-02 | worker de outbox | pendente |
+| 11 | LCL-01..LCL-03 | read model, retrieval e ranking baseline | pendente |
 
 Detalhes no [`task-board.md`](task-board.md) e em `specs/*/tickets.md`.
 

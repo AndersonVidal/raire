@@ -16,65 +16,65 @@
 
 | ID | Cenário | Requisito | Tipo | Teste | Status |
 | --- | --- | --- | --- | --- | --- |
-| AC-01 | cadastro válido cria conta e consentimentos | R-01, R-15 | U/I | `identity` › "signup persiste conta e versão dos termos" | pendente |
-| AC-02 | e-mail duplicado não enumera | R-01, R-05 | I/Sec | `identity` › "e-mail existente responde de forma genérica" | pendente |
-| AC-03 | confirmação de e-mail com token de uso único | R-02, R-03 | U/I | `identity` › "token expira e não pode ser reutilizado" | pendente |
-| AC-04 | login rotaciona sessão | R-04, R-11 | I | `identity` › "login cria nova sessão e invalida anterior" | pendente |
-| AC-05 | logout revoga sessão | R-12 | I | `identity` › "logout revoga apenas a sessão atual" | pendente |
-| AC-06 | reset não revela conta | R-05 | I/Sec | `identity` › "reset responde 202 para e-mail inexistente" | pendente |
-| AC-07 | rate limit de login | R-08 | I/Sec | `identity` › "6ª tentativa inválida bloqueia temporariamente" | pendente |
-| AC-08 | admin exige MFA | R-09, R-51 | I/Sec | `identity` › "login admin sem código TOTP é rejeitado" | pendente |
-| AC-09 | onboarding presencial publica perfil | R-20..R-28 | U/I | `directory` › "publica perfil presencial com área e disponibilidade" | pendente |
-| AC-10 | onboarding remoto sem área | R-21, R-22 | U | `directory` › "publica perfil remoto sem área" | pendente |
-| AC-11 | híbrido exige área | R-22 | U | `directory` › "híbrido sem área retorna INVALID_SERVICE_AREA" | pendente |
-| AC-12 | raio inválido é rejeitado | R-23 | U | `directory` › "raio abaixo do mínimo ou acima do máximo é rejeitado" | pendente |
-| AC-13 | perfil incompleto não publica | R-28 | U | `directory` › "publicação sem categoria retorna PROFILE_INCOMPLETE" | pendente |
-| AC-14 | draft não aparece na busca | R-26, R-27 | I | `directory` › "perfil draft não entra no read model público" | pendente |
-| AC-15 | prévia não expõe PII | R-29, R-54 | C/Sec | `directory` › "preview não contém e-mail, telefone, documento ou coordenada" | pendente |
-| AC-16 | categoria desativada remove perfil | R-33, R-42 | I | `directory` › "categoria inativa remove perfil da busca" | pendente |
-| AC-17 | catálogo ativo/inativo | R-40..R-44 | U/I | `catalog` › "categoria inativa não aparece no onboarding" | pendente |
-| AC-18 | consentimento versionado | R-15, R-52 | I | `identity` › "consentimento registra versão e timestamp" | pendente |
-| AC-19 | revogação de consentimento | R-16 | I | `identity` › "revogação de pesquisa impede evento analítico" | pendente |
+| AC-01 | cadastro válido cria conta e consentimentos | R-01, R-15 | U/I | `identity` › "signup persiste conta e versão dos termos" | verde |
+| AC-02 | e-mail duplicado não enumera | R-01, R-05 | I/Sec | `identity` › "e-mail existente responde de forma genérica" | verde |
+| AC-03 | confirmação de e-mail com token de uso único | R-02, R-03 | U/I | `identity` › "token expira e não pode ser reutilizado" | verde |
+| AC-04 | login rotaciona sessão | R-04, R-11 | I | `identity` › "login cria nova sessão e invalida anterior" | verde |
+| AC-05 | logout revoga sessão | R-12 | I | `identity` › "logout revoga apenas a sessão atual" | verde |
+| AC-06 | reset não revela conta | R-05 | I/Sec | `identity` › "reset responde 202 para e-mail inexistente" | verde |
+| AC-07 | rate limit de login | R-08 | I/Sec | `identity` › "6ª tentativa inválida bloqueia temporariamente" | verde |
+| AC-08 | admin exige MFA | R-09, R-51 | I/Sec | `identity` › "login admin sem código TOTP é rejeitado" | verde |
+| AC-09 | onboarding presencial publica perfil | R-20..R-28 | U/I | `directory` › "publica perfil presencial com área e disponibilidade" | verde |
+| AC-10 | onboarding remoto sem área | R-21, R-22 | U | `directory` › "publica perfil remoto sem área" | verde |
+| AC-11 | híbrido exige área | R-22 | U | `directory` › "híbrido sem área retorna INVALID_SERVICE_AREA" | verde |
+| AC-12 | raio inválido é rejeitado | R-23 | U | `directory` › "raio abaixo do mínimo ou acima do máximo é rejeitado" | verde |
+| AC-13 | perfil incompleto não publica | R-28 | U | `directory` › "publicação sem categoria retorna PROFILE_INCOMPLETE" | verde |
+| AC-14 | draft não aparece na busca | R-26, R-27 | I | `directory` › "perfil draft não entra no read model público" | verde |
+| AC-15 | prévia não expõe PII | R-29, R-54 | C/Sec | `directory` › "preview não contém e-mail, telefone, documento ou coordenada" | verde |
+| AC-16 | categoria desativada remove perfil | R-33, R-42 | I | `directory` › "categoria inativa remove perfil da busca" | verde |
+| AC-17 | catálogo ativo/inativo | R-40..R-44 | U/I | `catalog` › "categoria inativa não aparece no onboarding" | verde |
+| AC-18 | consentimento versionado | R-15, R-52 | I | `identity` › "consentimento registra versão e timestamp" | verde |
+| AC-19 | revogação de consentimento | R-16 | I | `identity` › "revogação de pesquisa impede evento analítico" | verde |
 | AC-20 | exportação de dados | R-17 | I | `identity` › "export retorna dados do próprio usuário" | pendente |
 | AC-21 | exclusão anonimiza | R-18 | I | `identity` › "delete anonimiza perfil e preserva auditoria" | pendente |
 | AC-22 | solicitação de direitos | R-19 | I | `identity` › "account_request é registrada e resolvida" | pendente |
-| AC-23 | PII fora de log | R-55 | U/Sec | `platform` › "redaction remove e-mail, telefone, documento e coordenada" | pendente |
+| AC-23 | PII fora de log | R-55 | U/Sec | `platform` › "redaction remove e-mail, telefone, documento e coordenada" | verde |
 | AC-24 | portfólio publica item | R-34..R-37 | I | `directory` › "item publicado aparece no perfil público" | pendente |
 | AC-25 | portfólio não é verificado | R-38 | U | `directory` › "item não recebe selo de verificação" | pendente |
 | AC-26 | portfólio denunciável | R-39 | I | `moderation` › "report aceita target portfolio" | pendente |
 | AC-27 | portfólio sem PII | R-54 | C/Sec | `directory` › "portfólio público não contém PII" | pendente |
-| AC-28 | catálogo com sinônimo | R-45 | U | `catalog` › "eletricista encontra instalação elétrica" | pendente |
-| AC-29 | seed idempotente | R-43 | I | `catalog` › "seed aplicado duas vezes mantém contagem" | pendente |
-| AC-30 | operador gerencia categoria | R-44 | I | `catalog` › "desativação grava auditoria" | pendente |
-| AC-31 | admin suspende perfil | R-46..R-48 | I/Sec | `moderation` › "suspender remove da busca e revoga sessão" | pendente |
-| AC-32 | auditoria admin | R-49 | I | `moderation` › "ação grava ator, alvo, motivo e correlação" | pendente |
-| AC-33 | operador não acessa admin sem MFA | R-51, R-09 | Sec | `identity` › "operator sem MFA recebe FORBIDDEN" | pendente |
+| AC-28 | catálogo com sinônimo | R-45 | U | `catalog` › "eletricista encontra instalação elétrica" | verde |
+| AC-29 | seed idempotente | R-43 | I | `catalog` › "seed aplicado duas vezes mantém contagem" | verde |
+| AC-30 | operador gerencia categoria | R-44 | I | `catalog` › "desativação grava auditoria" | verde |
+| AC-31 | admin suspende perfil | R-46..R-48 | I/Sec | `moderation` › "suspender remove da busca e revoga sessão" | verde |
+| AC-32 | auditoria admin | R-49 | I | `moderation` › "ação grava ator, alvo, motivo e correlação" | verde |
+| AC-33 | operador não acessa admin sem MFA | R-51, R-09 | Sec | `identity` › "operator sem MFA recebe FORBIDDEN" | parcial |
 | AC-34 | onboarding acessível | R-58..R-63 | A11y | `web` › "teclado, foco, rótulos e 360 px" | pendente |
 | AC-35 | estados de UI | R-61 | E2E | `web` › "loading, vazio e erro visíveis" | pendente |
 | AC-36 | reduced motion | R-62 | A11y | `web` › "CSS respeita prefers-reduced-motion" | pendente |
-| AC-37 | health/readiness | R-67 | I | `platform` › "health 200 e readiness falha sem banco" | pendente |
-| AC-38 | logs estruturados | R-64 | U | `platform` › "log contém correlation_id e não contém PII" | pendente |
-| AC-39 | feature flag default seguro | R-68 | I | `platform` › "flag desconhecida resolve off" | pendente |
-| AC-40 | e-mail não confirmado não publica | R-02 | U/I | `identity` › "publicar sem e-mail confirmado retorna EMAIL_NOT_CONFIRMED" | pendente |
-| AC-41 | mesma conta cliente e profissional | R-07 | I | `directory` › "conta com perfil profissional também atua como cliente" | pendente |
-| AC-42 | CSRF ausente/inválido | R-10 | Sec | `platform` › "POST sem CSRF retorna CSRF_INVALID" | pendente |
-| AC-43 | troca de senha revoga outras sessões | R-12 | I | `identity` › "password change mantém sessão atual e revoga as demais" | pendente |
-| AC-44 | preferência de contato e mascaramento | R-13, R-14, R-14.1 | U/I | `identity` › "preferência do perfil sobrescreve a da conta; telefone não verificado não aparece" | pendente |
-| AC-45 | selo de verificação honesto | R-31 | U/Sec | `directory` › "selo mostra apenas o que foi verificado" | pendente |
-| AC-46 | pausar/reativar perfil | R-32 | I | `directory` › "pause remove da busca; resume recoloca" | pendente |
+| AC-37 | health/readiness | R-67 | I | `platform` › "health 200 e readiness falha sem banco" | verde |
+| AC-38 | logs estruturados | R-64 | U | `platform` › "log contém correlation_id e não contém PII" | verde |
+| AC-39 | feature flag default seguro | R-68 | I | `platform` › "flag desconhecida resolve off" | verde |
+| AC-40 | e-mail não confirmado não publica | R-02 | U/I | `identity` › "publicar sem e-mail confirmado retorna EMAIL_NOT_CONFIRMED" | verde |
+| AC-41 | mesma conta cliente e profissional | R-07 | I | `directory` › "conta com perfil profissional também atua como cliente" | verde |
+| AC-42 | CSRF ausente/inválido | R-10 | Sec | `platform` › "POST sem CSRF retorna CSRF_INVALID" | verde |
+| AC-43 | troca de senha revoga outras sessões | R-12 | I | `identity` › "password change mantém sessão atual e revoga as demais" | verde |
+| AC-44 | preferência de contato e mascaramento | R-13, R-14, R-14.1 | U/I | `identity` › "preferência do perfil sobrescreve a da conta; telefone não verificado não aparece" | verde |
+| AC-45 | selo de verificação honesto | R-31 | U/Sec | `directory` › "selo mostra apenas o que foi verificado" | verde |
+| AC-46 | pausar/reativar perfil | R-32 | I | `directory` › "pause remove da busca; resume recoloca" | verde |
 | AC-47 | reordenar/despublicar portfólio | R-36 | I | `directory` › "reorder e unpublish refletem no público" | pendente |
-| AC-48 | categoria/flag auditada | R-44, R-50 | I | `catalog` › "mudança de categoria/flag grava audit_event e métrica" | pendente |
+| AC-48 | categoria/flag auditada | R-44, R-50 | I | `catalog` › "mudança de categoria/flag grava audit_event e métrica" | verde |
 | AC-49 | termos/privacidade exibidos | R-57 | E2E | `web` › "cadastro mostra versão dos termos e privacidade" | pendente |
-| AC-50 | métricas de cadastro/publicação | R-65 | I | `platform` › "métricas de funil são registradas sem PII" | pendente |
-| AC-51 | rate limit de cadastro/reset/confirmação | R-08 | Sec | `identity` › "limites de signup/reset/resend são aplicados" | pendente |
-| AC-52 | idempotência de signup/confirmação/reset | RNF-05 | I | `identity` › "retry com mesma chave não duplica conta/token" | pendente |
-| AC-53 | paginação/filtros admin | R-46, R-50 | I | `moderation` › "admin lista com cursor e filtros" | pendente |
-| AC-54 | localização precisa cifrada e expurgada | R-24, R-53 | Sec/I | `directory` › "coordenada é cifrada e expurgada após 90 dias" | pendente |
-| AC-55 | disponibilidade válida | R-25 | U | `directory` › "janela sobreposta/inválida é rejeitada" | pendente |
+| AC-50 | métricas de cadastro/publicação | R-65 | I | `platform` › "métricas de funil são registradas sem PII" | verde |
+| AC-51 | rate limit de cadastro/reset/confirmação | R-08 | Sec | `identity` › "limites de signup/reset/resend são aplicados" | verde |
+| AC-52 | idempotência de signup/confirmação/reset | RNF-05 | I | `identity` › "retry com mesma chave não duplica conta/token" | verde |
+| AC-53 | paginação/filtros admin | R-46, R-50 | I | `moderation` › "admin lista com cursor e filtros" | verde |
+| AC-54 | localização precisa cifrada e expurgada | R-24, R-53 | Sec/I | `directory` › "coordenada é cifrada e expurgada após 90 dias" | verde |
+| AC-55 | disponibilidade válida | R-25 | U | `directory` › "janela sobreposta/inválida é rejeitada" | verde |
 | AC-56 | imagem de portfólio validada | R-34 | U/I | `directory` › "imagem acima do limite/tipo inválido retorna INVALID_IMAGE" | pendente |
 | AC-57 | sucesso e sessão expirada na UI | R-61 | E2E | `web` › "estado de sucesso e sessão expirada são explícitos" | pendente |
 | AC-58 | solicitações de direitos no admin | R-19 | I | `identity` › "operador lista e resolve account_request" | pendente |
-| AC-59 | admin de categorias/flags | R-44, R-50 | I | `catalog` › "operador cria/desativa categoria e altera flag" | pendente |
+| AC-59 | admin de categorias/flags | R-44, R-50 | I | `catalog` › "operador cria/desativa categoria e altera flag" | verde |
 | AC-60 | copy PT-BR | R-63 | U | `web` › "copy revisada, sem jargão ou promessa enganosa" | pendente |
 
 ## Cenários Gherkin

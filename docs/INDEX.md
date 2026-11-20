@@ -2,7 +2,7 @@
 
 Este documento é o índice central da base de conhecimento do projeto RAIRE. Ele facilita navegação, organização, rastreabilidade e contexto para agentes de IA.
 
-**Estado:** fundação aprovada; demais specs em revisão; nenhum código implementado.
+**Estado:** fundação implementada localmente e em review; demais specs em revisão; sem deploy ou piloto.
 
 ---
 
@@ -13,11 +13,22 @@ Este documento é o índice central da base de conhecimento do projeto RAIRE. El
 3. [`docs/product/prd.md`](product/prd.md) — PRD v1.0.
 4. [`docs/process/pipeline.md`](process/pipeline.md) — pipeline e donos.
 5. [`docs/team/task-board.md`](team/task-board.md) — tarefas.
-6. [`docs/status/2026-11-20-planning.md`](status/2026-11-20-planning.md) — status detalhado.
-7. [`docs/status/2026-11-20-qa-documental.md`](status/2026-11-20-qa-documental.md) — QA da organização.
-8. [`docs/status/2026-11-20-review-planning.md`](status/2026-11-20-review-planning.md) — review de planejamento.
-9. [`docs/status/2026-11-20-decision-draft.md`](status/2026-11-20-decision-draft.md) — recomendação para Q-07/Q-44–Q-50.
-10. [`docs/status/2026-11-20-foundation-review-checklist.md`](status/2026-11-20-foundation-review-checklist.md) — o que revisar na spec foundation.
+6. [`docs/status/2026-11-20-foundation-implementation.md`](status/2026-11-20-foundation-implementation.md) — implementação da fundação.
+7. [`docs/status/2026-11-20-foundation-follow-ups.md`](status/2026-11-20-foundation-follow-ups.md) — follow-ups e bloqueios.
+8. [`docs/runbooks/foundation.md`](runbooks/foundation.md) — como rodar a fundação.
+9. [`docs/status/2026-11-20-qa-documental.md`](status/2026-11-20-qa-documental.md) — QA da organização.
+10. [`docs/status/2026-11-20-foundation-review-checklist.md`](status/2026-11-20-foundation-review-checklist.md) — review da spec foundation.
+
+---
+
+## Implementação
+
+- [`api/openapi.yaml`](../api/openapi.yaml) — contrato OpenAPI 3.1 da fundação
+- [`cmd/raire`](../cmd/raire) — binário HTTP + job de expurgo
+- [`internal`](../internal) — contextos, plataforma e API
+- [`db/migrations`](../db/migrations) — schema forward-only
+- [`db/seeds`](../db/seeds) — catálogo e flags idempotentes
+- [`specs/foundation-platform/evidence/2026-11-20-foundation-tests.md`](../specs/foundation-platform/evidence/2026-11-20-foundation-tests.md) — evidência de testes
 
 ---
 

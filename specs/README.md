@@ -53,4 +53,4 @@ Ver `docs/process/approvals.md`. A `foundation-platform` foi aprovada em 2026-11
 
 ## Estado da implementação
 
-Nenhum código de produto implementado. A `foundation-platform` está aprovada e os tickets FND estão prontos; a implementação pode começar pelo `FND-01`.
+A fundação foi implementada localmente em 2026-11-20 (SQLite, Go, sem deploy). `FND-01..06`, `FND-14..16` e fatias de `FND-09/10/17` estão em review; portfólio, direitos, web, Postgres e worker de outbox seguem pendentes. Ver `docs/status/2026-11-20-foundation-implementation.md` e `docs/status/2026-11-20-foundation-follow-ups.md`.

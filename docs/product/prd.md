@@ -745,7 +745,7 @@ Cada spec mantém:
 - Privacidade/LGPD com classificação, retenção e direitos.
 - Pipeline, RACI, task board e handoffs por pessoa.
 - Templates de spec, aceite, ticket, review, QA e segurança.
-- Nenhum código implementado; implementação bloqueada até aprovação humana.
+- Nenhum código implementado na data da v1.0; a fundação foi implementada depois, em 2026-11-20.
 
 ### v0.1 — 2026-11-20
 
