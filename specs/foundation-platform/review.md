@@ -2,7 +2,7 @@
 
 **Status:** revisão técnica e independente executada; aprovação formal pendente  
 **Spec:** `spec.md`  
-**Implementação:** commit local de 2026-11-20  
+**Implementação:** commit local `2602cba`  
 **Dono:** Victor  
 **Revisores pendentes:** Anderson (produto/PII), Felipe (segurança/QA)  
 **Checklist de spec:** `docs/status/2026-11-20-foundation-review-checklist.md`

@@ -1,7 +1,8 @@
 # Implementação da Fundação — 2026-11-20
 
-**Status:** fatia de Victor implementada e verificada localmente; revisão independente pendente  
+**Status:** fatia de Victor implementada e verificada localmente; revisão independente executada, aprovação formal pendente  
 **Autor da implementação:** Victor (agente no harness)  
+**Commit de código:** `2602cba`  
 **Aprovação:** nenhuma aprovação de código foi registrada por IA  
 **Escopo:** `FND-01`..`FND-06`, `FND-14`..`FND-16`; dependências antecipadas de `FND-09`, `FND-10` e `FND-17`  
 **Fora de escopo:** portfólio, privacidade/direitos, web, E2E, Postgres de produção, piloto

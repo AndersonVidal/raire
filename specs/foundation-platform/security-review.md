@@ -4,6 +4,7 @@
 **Spec:** `spec.md`  
 **Dono:** Victor  
 **Revisor designado:** Felipe  
+**Implementação:** commit local `2602cba`  
 **Data:** 2026-11-20  
 **Escopo:** código local da fundação; sem deploy, dados reais ou piloto
 

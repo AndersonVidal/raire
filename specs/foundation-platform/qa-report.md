@@ -4,6 +4,7 @@
 **Spec:** `spec.md`  
 **Dono:** Victor  
 **Execução:** 2026-11-20  
+**Commit de código:** `2602cba`  
 **Ambiente:** Windows 10/11, Go 1.27.1, SQLite (modernc), sem CGO  
 **Commit:** alterações locais desta entrega
 

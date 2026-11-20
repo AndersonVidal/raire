@@ -2,6 +2,7 @@
 
 **Status:** execução local concluída; revisão independente executada, aprovação pendente  
 **Implementação:** fatia de Victor (`FND-01..06`, `FND-14..16`; dependências de `FND-09/10/17`)  
+**Commit de código:** `2602cba`  
 **Ambiente:** Windows, Go 1.27.1, SQLite via `modernc.org/sqlite`, sem CGO  
 **Banco:** arquivo SQLite temporário por teste; nenhuma fixture real
 
