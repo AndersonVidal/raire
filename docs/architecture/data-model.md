@@ -46,9 +46,10 @@
 accounts
   id, email_normalized (unique), password_hash, display_name,
   role (client|professional|operator|admin),
-  email_verified_at, contact_email, contact_phone,
+  email_verified_at, contact_email, contact_phone, contact_phone_verified_at,
   contact_preference (platform|email|phone),
-  mfa_secret, suspended_at, deleted_at, created_at, updated_at
+  mfa_secret, mfa_recovery_codes_hash,
+  suspended_at, deleted_at, created_at, updated_at
 
 sessions
   id, account_id, token_hash (unique), csrf_token_hash,
@@ -103,9 +104,10 @@ professional_profiles
   id, account_id (unique), display_name, bio, service_type (in_person|remote|hybrid),
   status (draft|published|paused|suspended),
   city, neighborhood, public_area_label,
-  precise_lat_enc, precise_lng_enc, radius_km,
-  availability_text, availability_json,
-  contact_preference, verification (unverified|contact_verified|identity_verified),
+  precise_lat_enc, precise_lng_enc, precise_location_expires_at, radius_km,
+  availability_windows_json, availability_note,
+  contact_preference_override (nullable),
+  verification (unverified|contact_verified|identity_verified), -- cache derivado de verifications
   published_at, created_at, updated_at, suspended_at, suspended_reason
 
 profile_categories
@@ -113,7 +115,8 @@ profile_categories
 
 portfolio_items
   id, profile_id, title, description, category_id, image_ref,
-  position, status (draft|published|removed), created_at, updated_at, removed_at
+  image_mime, image_size_bytes, position,
+  status (draft|published|removed), created_at, updated_at, removed_at
 ```
 
 **Invariantes:**
@@ -123,8 +126,14 @@ portfolio_items
 - presencial/híbrido exige área válida;
 - remoto não exige área;
 - raio entre mínimo e máximo;
-- localização precisa cifrada e nunca no read model público;
-- portfólio não é experiência verificada.
+- `availability_windows_json` tem dia/hora/fuso válidos e sem sobreposição não resolvida;
+- `contact_preference_override` nulo usa a preferência da conta; quando preenchido, sobrescreve;
+- telefone só é público/verificado com `contact_phone_verified_at` ou `verifications` verificado;
+- localização precisa cifrada (AES-256-GCM), com chave fora do banco e expiração máxima de 90 dias;
+- `precise_lat_enc/lng_enc` nunca entram no read model público, log ou evento;
+- `verification` é cache derivado de `verifications`; a fonte de verdade é a tabela;
+- portfólio não é experiência verificada;
+- imagem de portfólio: JPG/PNG/WebP, até 2 MB, metadados removidos, storage isolado.
 
 ### 3.4 Demand
 
@@ -174,9 +183,10 @@ review_responses
   id, review_id (unique), author_id, comment, created_at, updated_at
 
 verifications
-  id, account_id, kind (contact|identity), status
-  (not_started|pending|verified|rejected|expired),
+  id, account_id, kind (contact_email|contact_phone|identity),
+  status (not_started|pending|verified|rejected|expired),
   evidence_ref_enc, decided_by, decided_at, expires_at, created_at
+  -- fonte de verdade; professional_profiles.verification é cache/read model
 ```
 
 **Invariantes:**
@@ -292,12 +302,19 @@ fairness_policy 1--N visibility_event
 | Dado | Onde fica | Exposição |
 | --- | --- | --- |
 | e-mail | `accounts.email_normalized` | nunca público |
-| telefone | `accounts.contact_phone` | mascarado até aceite |
-| localização precisa | `professional_profiles.precise_lat_enc/lng_enc` | nunca pública |
+| telefone | `accounts.contact_phone` + `contact_phone_verified_at` | mascarado até consentimento; selo só se verificado |
+| localização precisa | `professional_profiles.precise_lat_enc/lng_enc` + `precise_location_expires_at` | nunca pública; 90 dias; expurgo auditável |
 | localização aproximada | `city`, `neighborhood`, `radius_km` | pública |
-| documento | `verifications.evidence_ref_enc` | restrito à operação |
+| documento | `verifications.evidence_ref_enc` | restrito à operação; 90 dias após decisão |
 | denúncia | `reports.details` | restrito à moderação |
-| eventos | `visibility_events` | pseudonimizados |
+| eventos | `visibility_events` | pseudonimizados; sem PII |
+
+**Regras:**
+
+- chave de cifra fora do banco (secret manager/env);
+- `verifications` é a fonte de verdade do selo;
+- `contact_preference_override` nulo usa a preferência da conta;
+- logs e eventos nunca recebem e-mail, telefone, documento ou coordenada precisa.
 
 ---
 

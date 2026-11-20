@@ -1,7 +1,7 @@
 # foundation-platform — tickets
 
 **Spec:** `spec.md`  
-**Status:** proposto (nada implementar antes da aprovação)  
+**Status:** aprovado; tickets prontos para implementação (DoR atendido)  
 **Dono:** Victor  
 **Revisores:** Anderson (produto/PII), Felipe (segurança/QA)
 
@@ -9,22 +9,29 @@
 
 | Ticket | O quê | Dono | Depende de | Tam. | Status |
 | --- | --- | --- | --- | --- | --- |
-| FND-01 | Estrutura modular, contratos e regras de dependência | Victor | — | M | proposto |
-| FND-02 | Modelo de dados, migrations e seed | Victor | FND-01 | G | proposto |
-| FND-03 | Identidade, sessão, RBAC e rate limit | Victor | FND-01, FND-02 | G | proposto |
-| FND-04 | Confirmação de e-mail, reset e MFA | Victor | FND-03 | M | proposto |
-| FND-05 | Catálogo, sinônimos e admin de catálogo | Victor | FND-02 | M | proposto |
-| FND-06 | Perfil profissional, área e disponibilidade | Victor | FND-02, FND-03 | G | proposto |
-| FND-07 | Portfólio profissional | Anderson | FND-06 | M | proposto |
-| FND-08 | Privacidade: consentimento, PII, exportação/exclusão | Felipe | FND-03, FND-06 | G | proposto |
-| FND-09 | Admin mínimo, suspensão e auditoria | Felipe | FND-03, FND-06 | M | proposto |
-| FND-10 | Observabilidade, health e feature flags | Felipe | FND-01 | M | proposto |
-| FND-11 | Web: cadastro, login e confirmação | Anderson | FND-03, FND-04 | G | proposto |
-| FND-12 | Web: onboarding e perfil | Anderson | FND-06, FND-11 | G | proposto |
-| FND-13 | E2E, acessibilidade e evidência da fundação | Felipe | FND-11, FND-12 | M | proposto |
-| FND-14 | OpenAPI, README e handoff | Victor | todos | P | proposto |
+| FND-01 | Estrutura modular, contratos e regras de dependência | Victor | — | M | pronto |
+| FND-02 | Modelo de dados, migrations e seed | Victor | FND-01 | G | pronto |
+| FND-03 | Identidade, sessão, RBAC e rate limit | Victor | FND-01, FND-02 | G | pronto |
+| FND-04 | Confirmação de e-mail, reset, MFA e recovery codes | Victor | FND-03 | M | pronto |
+| FND-05 | Catálogo, sinônimos e admin de catálogo | Victor | FND-02 | M | pronto |
+| FND-06 | Perfil profissional, área, disponibilidade e contato | Victor | FND-02, FND-03 | G | pronto |
+| FND-07 | Portfólio profissional | Anderson | FND-06 | M | pronto |
+| FND-08 | Privacidade: consentimento, PII, exportação/exclusão | Felipe | FND-03, FND-06 | G | pronto |
+| FND-09 | Admin mínimo, suspensão e auditoria | Felipe | FND-03, FND-06 | M | pronto |
+| FND-10 | Observabilidade, health e feature flags | Felipe | FND-01 | M | pronto |
+| FND-11 | Web: cadastro, login e confirmação | Anderson | FND-03, FND-04 | G | pronto |
+| FND-12 | Web: onboarding e perfil | Anderson | FND-06, FND-11 | G | pronto |
+| FND-13 | E2E, acessibilidade e evidência da fundação | Felipe | FND-11, FND-12 | M | pronto |
+| FND-14 | OpenAPI, README e handoff | Victor | todos | P | pronto |
+| FND-15 | Segurança de conta e abuso | Victor | FND-03, FND-04 | M | pronto |
+| FND-16 | Dados sensíveis: contato, disponibilidade e localização | Victor | FND-06 | M | pronto |
+| FND-17 | Admin completo: catálogo, flags e direitos | Felipe | FND-05, FND-09 | M | pronto |
+| FND-18 | Web: estados, termos e acessibilidade | Anderson | FND-11, FND-12 | M | pronto |
+| FND-19 | QA de hardening e segurança | Felipe | FND-13, FND-15..FND-18 | M | pronto |
 
 Tamanhos: `P` (até 1 dia), `M` (2–3), `G` (4–5), `GG` (quebrar).
+
+> **Integração da revisão 1.1:** os tickets FND-15 a FND-19 cobrem os itens de hardening (segurança de conta, dados sensíveis, admin completo, web/estados e QA). Os tickets FND-03/04/05/06/08/09/10/12 devem ser lidos em conjunto com eles para evitar duplicidade.
 
 ---
 
@@ -301,3 +308,104 @@ Tamanhos: `P` (até 1 dia), `M` (2–3), `G` (4–5), `GG` (quebrar).
 
 **Testes:** validação OpenAPI, links, build.  
 **DoD:** documentação revisada e mergeada.
+
+---
+
+### FND-15 — Segurança de conta e abuso
+
+**Objetivo:** fechar lacunas de autenticação, CSRF, rate limit, idempotência e recuperação de MFA.  
+**Requisitos:** R-08..R-12, R-14.1.  
+**Aceite:** AC-40..AC-44, AC-51, AC-52.  
+**Escopo:**
+
+- `POST /v1/me/password` com senha atual;
+- revogação das outras sessões;
+- códigos de recuperação TOTP (hash, uso único);
+- CSRF em toda mutação autenticada;
+- rate limit de signup/reset/resend/confirmação;
+- idempotência de signup/confirmação/reset;
+- resposta genérica para e-mail duplicado.
+
+**Fora de escopo:** WebAuthn, SSO, MFA por SMS.  
+**Testes:** unitários de token/senha, integração de sessão/CSRF, rate limit, idempotência, recuperação.  
+**Riscos:** lockout de admin; mitigar com recovery codes e auditoria.
+
+---
+
+### FND-16 — Dados sensíveis: contato, disponibilidade e localização
+
+**Objetivo:** fechar as ambiguidades de contato, disponibilidade e localização precisa.  
+**Requisitos:** R-13..R-14.1, R-24..R-25, R-53.  
+**Aceite:** AC-44, AC-45, AC-54, AC-55.  
+**Escopo:**
+
+- precedência conta → perfil;
+- `phone_verified_at` e selo de contato;
+- janelas de disponibilidade com dia/hora/fuso e validação de sobreposição;
+- cifra AES-256-GCM para localização precisa;
+- chave fora do banco;
+- retenção de 90 dias e job de expurgo auditável;
+- mascaramento de contato.
+
+**Fora de escopo:** polígono, geocoding, verificação de identidade.  
+**Testes:** unitários de disponibilidade, integração de contato, segurança/criptografia, job de expurgo.  
+**Riscos:** vazamento de coordenada; mitigar com testes de contrato e acesso restrito.
+
+---
+
+### FND-17 — Admin completo: catálogo, flags e direitos
+
+**Objetivo:** completar a operação administrativa da fundação.  
+**Requisitos:** R-19, R-44, R-46..R-50.  
+**Aceite:** AC-48, AC-53, AC-58, AC-59.  
+**Escopo:**
+
+- CRUD de categorias no admin;
+- ativação/desativação com auditoria e métrica;
+- feature flags com default `off`, dono e revisão;
+- listagem/resolução de `account_requests`;
+- paginação e filtros em perfis/auditoria;
+- métricas de catálogo/flags.
+
+**Fora de escopo:** moderação de denúncias (trust), política de ranking (fairness).  
+**Testes:** integração, authz, auditoria, paginação, métricas.  
+**Riscos:** abuso de admin; mitigar com MFA, menor privilégio e auditoria.
+
+---
+
+### FND-18 — Web: estados, termos e acessibilidade
+
+**Objetivo:** fechar estados de UI, exibição de termos e copy da fundação.  
+**Requisitos:** R-57, R-58..R-63.  
+**Aceite:** AC-49, AC-57, AC-60.  
+**Escopo:**
+
+- estado de sucesso e sessão expirada;
+- exibição/versão de termos e privacidade;
+- validação e mensagens de imagem;
+- copy PT-BR revisada;
+- teclado, foco, 360 px e reduced motion.
+
+**Fora de escopo:** telas de busca/pedido/avaliação (web-experience).  
+**Testes:** E2E, a11y, copy review, 360 px.  
+**Riscos:** copy enganosa; mitigar com revisão de produto.
+
+---
+
+### FND-19 — QA de hardening e segurança
+
+**Objetivo:** provar os novos comportamentos de segurança, privacidade e admin.  
+**Requisitos:** RNF-08, RNF-09, RNF-14.  
+**Aceite:** AC-40..AC-60 (aplicáveis).  
+**Escopo:**
+
+- testes de CSRF, rate limit, idempotência;
+- PII em resposta/log/evento;
+- criptografia/expurgo de localização;
+- paginação/filtros admin;
+- SQLite/Postgres contract;
+- evidência de hardening.
+
+**Fora de escopo:** pentest externo.  
+**Testes:** unit, integração, contrato, segurança, a11y.  
+**Riscos:** cobertura incompleta; mitigar com matriz de aceite e revisão de Felipe.

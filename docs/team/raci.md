@@ -1,7 +1,7 @@
 # RACI e Divisão de Trabalho — RAIRE
 
-**Status:** em revisão  
-**Versão:** 1.0  
+**Status:** aprovado para a fundação em 2026-11-20  
+**Versão:** 1.1  
 **Data:** 2026-11-20  
 **Equipe:** Victor, Anderson, Felipe
 

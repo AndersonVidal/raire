@@ -4,7 +4,7 @@
 **Versão:** 1.0  
 **Data:** 2026-11-20  
 **Dono:** Victor  
-**Relacionado:** `docs/product/prd.md`, ADRs 0001–0006, `docs/architecture/ranking-and-fairness.md`, `docs/architecture/data-model.md`
+**Relacionado:** `docs/product/prd.md`, ADRs 0001–0006, `docs/architecture/ranking-and-fairness.md`, `docs/architecture/data-model.md`, `docs/architecture/spec-boundaries.md`
 
 > As decisões deste documento são propostas. Elas só se tornam vinculantes quando registradas em ADR com status `aceito` e aprovadas pelo humano responsável. O objetivo é evitar complexidade prematura e manter o domínio compreensível.
 

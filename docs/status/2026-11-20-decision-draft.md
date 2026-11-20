@@ -1,10 +1,10 @@
 # Minuta de Decisão — Q-07 e Q-44 a Q-50
 
-**Status:** recomendação técnica; **aguarda aprovação humana**  
+**Status:** aprovado e integrado em 2026-11-20  
 **Data:** 2026-11-20  
 **Dono:** Victor  
 **Revisores:** Felipe (segurança/QA), Anderson (produto/web)  
-**Regra:** nada aqui está decidido até registro humano em `docs/product/open-questions.md` e, quando estrutural, em ADR.
+**Regra:** as recomendações foram aprovadas por humano e registradas em `docs/product/decisions-2026-11-20.md`.
 
 ---
 
@@ -198,11 +198,11 @@ Estas 8 decisões destravam o início da implementação da fundação (`foundat
 
 ---
 
-## 10. O que ainda não está decidido
+## 10. Decisões complementares (aprovadas em 2026-11-20)
 
-Estas não são decisões do Victor, mas afetam a fundação:
+Estas não eram decisões do Victor, mas afetam a fundação. Foram aprovadas junto com o pacote:
 
-| ID | Pergunta | Dono | Recomendação |
+| ID | Pergunta | Dono | Decisão |
 | --- | --- | --- | --- |
 | Q-02 | Categorias iniciais | Anderson | manutenção/reparos + aulas/consultoria |
 | Q-08 | Área por raio ou bairro/polígono | Victor | cidade/bairro + raio |
@@ -214,19 +214,16 @@ Estas não são decisões do Victor, mas afetam a fundação:
 
 ---
 
-## 11. Como registrar a decisão
+## 11. Registro da decisão
 
-1. Humano aprova a recomendação (ou altera).
-2. Atualizar `docs/product/open-questions.md`:
-   - estado: `decidida`;
-   - data;
-   - decisão;
-   - link para ADR/spec.
-3. Atualizar `docs/process/approvals.md`.
-4. Se estrutural, atualizar ADR para `aceito`.
-5. Atualizar `specs/foundation-platform/spec.md` se a decisão mudar requisito.
-6. Marcar tickets afetados como `pronto` no `docs/team/task-board.md`.
+As recomendações foram aprovadas em 2026-11-20 e registradas em:
+
+1. `docs/product/decisions-2026-11-20.md` (registro canônico);
+2. `docs/process/approvals.md` (log de aprovação);
+3. `docs/product/open-questions.md` (status decidido);
+4. ADRs 0001–0006 (status `aceito`);
+5. `specs/foundation-platform/spec.md` (versão 1.1 aprovada).
 
 ## 12. Veredito
 
-As 8 recomendações são suficientes para iniciar `FND-01` e `FND-02` com risco controlado, desde que a spec `foundation-platform` seja aprovada após os ajustes do checklist de review.
+As 8 recomendações foram aprovadas em 2026-11-20. A spec `foundation-platform` v1.1 foi aprovada após a integração dos must-fix e should-fix. A implementação pode começar pelo `FND-01`; o piloto continua bloqueado até DPIA/jurídico.

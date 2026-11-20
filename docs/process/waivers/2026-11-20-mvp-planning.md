@@ -1,12 +1,12 @@
 # Waiver — Planejamento do MVP (sem código)
 
 **ID:** W-2026-11-20-01  
-**Status:** ativo  
+**Status:** encerrado para a fundação em 2026-11-20  
 **Data:** 2026-11-20  
 **Solicitante:** fundador/produto  
 **Aprovador:** instrução humana registrada no pedido de trabalho  
 **Escopo:** organização, PRD, docs, specs, tickets, planos, pipeline e divisão de tarefas  
-**Expira:** antes do primeiro ticket de implementação
+**Encerramento:** `foundation-platform` aprovada; demais specs seguem o fluxo normal de revisão
 
 ---
 
@@ -38,6 +38,8 @@ Este waiver termina quando:
 
 1. as specs estiverem revisadas e aprovadas por humano; ou
 2. o fundador revogar o waiver.
+
+**Status:** encerrado para a `foundation-platform` em 2026-11-20. As demais specs seguem o fluxo normal: revisão → aprovação → ticket → implementação.
 
 Após o término, vale o fluxo normal: spec aprovada → ticket → implementação → review → QA → segurança → release.
 

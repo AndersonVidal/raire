@@ -1,6 +1,6 @@
 # ADR 0004 — Sessão web, CSRF, RBAC e MFA
 
-**Status:** proposto  
+**Status:** aceito  
 **Data:** 2026-11-20  
 **Decisores:** arquitetura, segurança, backend  
 **Relacionado:** `docs/process/security-privacy.md`, `docs/security/threat-model.md`
@@ -55,4 +55,4 @@ O MVP é web, mobile-first e server-rendered. Precisa de autenticação segura, 
 
 ## Status
 
-Proposto. Requer aprovação humana antes da implementação.
+Aceito em 2026-11-20. Implementação condicionada à spec aprovada.

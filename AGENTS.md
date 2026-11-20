@@ -39,7 +39,7 @@ O repositório contém:
 - pipeline de trabalho e divisão de tarefas entre Victor, Anderson e Felipe;
 - documentos de arquitetura, segurança, privacidade, métricas e roadmap.
 
-A preparação da implementação foi autorizada pelo waiver de planejamento em `docs/process/waivers/2026-11-20-mvp-planning.md`. **Esse waiver não autoriza código, merge, piloto ou produção.** A implementação começa somente após aprovação humana das specs.
+A preparação da implementação foi autorizada pelo waiver de planejamento em `docs/process/waivers/2026-11-20-mvp-planning.md`. A `foundation-platform` foi aprovada em 2026-11-20 e as decisões Q-01..Q-50 foram registradas; as demais specs seguem em revisão. **Ainda não há código de produto implementado.** O waiver não autoriza piloto ou produção.
 
 ## 4. Fluxo obrigatório
 

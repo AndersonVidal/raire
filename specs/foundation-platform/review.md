@@ -1,6 +1,6 @@
 # foundation-platform — review
 
-**Status:** não iniciado  
+**Status:** spec aprovada em 2026-11-20; code review ainda não iniciado  
 **Spec:** `spec.md`  
 **Dono:** Victor  
 **Checklist de review:** `docs/status/2026-11-20-foundation-review-checklist.md`  
@@ -33,9 +33,9 @@
 
 ## Riscos residuais
 
-- Spec ainda em revisão; requisitos podem mudar.
+- Implementação ainda não iniciada; code review pendente.
 
 ## O que o humano deve olhar
 
-- Aprovação da spec antes de qualquer código.
-- Questões abertas em `docs/product/open-questions.md`.
+- Spec aprovada em 2026-11-20.
+- Questões decididas em `docs/product/decisions-2026-11-20.md`.

@@ -1,11 +1,13 @@
 # Questões Abertas e Decisões Pendentes — RAIRE
 
-**Status:** em revisão  
-**Versão:** 1.0  
+**Status:** decidido em 2026-11-20  
+**Versão:** 1.1  
 **Fonte:** PRD v1.0, seção 16  
-**Uso:** desbloquear planejamento e implementação sem inventar requisito.
+**Uso:** histórico das perguntas e das decisões aprovadas.
 
-> Recomendações técnicas para Q-07 e Q-44–Q-50: `docs/status/2026-11-20-decision-draft.md`. Ainda **não são decisões**; aguardam aprovação humana.
+> **Decisão humana (2026-11-20):** todas as recomendações de Q-01 a Q-50 foram aprovadas. O registro canônico está em [`docs/product/decisions-2026-11-20.md`](decisions-2026-11-20.md). As tabelas abaixo mantêm a pergunta e o "default seguro" como referência histórica; a coluna de decisão aprovada está no documento de decisões.
+>
+> **Ressalva:** Q-38–Q-43 (LGPD/jurídico) estão aprovadas para planejamento, mas exigem validação jurídica e DPIA antes do piloto. Q-40 (DPO) e Q-01/Q-03 (região e tamanho de oferta) continuam como pendências operacionais antes de F6.
 
 ---
 
@@ -175,17 +177,19 @@ Agentes **não podem**:
 
 ---
 
-## 11. Questões que bloqueiam a implementação
+## 11. Questões que bloqueavam a implementação
+
+**Status:** decididas em 2026-11-20. Ver `docs/product/decisions-2026-11-20.md`.
 
 Antes de iniciar F1:
 
-- Q-07 (um perfil por conta)
-- Q-44 (SQLite/Postgres)
-- Q-45 (server-rendered)
-- Q-46 (sessão)
-- Q-47 (MFA)
-- Q-48 (outbox)
-- Q-50 (feature flags)
+- Q-07 (um perfil por conta) — decidida: um perfil por conta.
+- Q-44 (SQLite/Postgres) — decidida: SQLite local/CI + Postgres produção.
+- Q-45 (server-rendered) — decidida: server-rendered.
+- Q-46 (sessão) — decidida: cookie + CSRF.
+- Q-47 (MFA) — decidida: TOTP + recovery codes.
+- Q-48 (outbox) — decidida: outbox interno.
+- Q-50 (feature flags) — decidida: tabela no banco.
 
 Antes de F2:
 

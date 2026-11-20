@@ -1,6 +1,6 @@
 # ADR 0002 — PostgreSQL + PostGIS em produção; SQLite local/CI
 
-**Status:** proposto  
+**Status:** aceito  
 **Data:** 2026-11-20  
 **Decisores:** arquitetura, backend, segurança  
 **Relacionado:** `docs/architecture/architecture-plan.md`, `docs/architecture/data-model.md`
@@ -52,4 +52,4 @@ Usar **PostgreSQL 16+ com PostGIS** como fonte de verdade em produção/staging 
 
 ## Status
 
-Proposto. Requer aprovação humana antes da implementação.
+Aceito em 2026-11-20. Implementação condicionada à spec aprovada e staging com Postgres.

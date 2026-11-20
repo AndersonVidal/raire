@@ -1,6 +1,6 @@
 # ADR 0003 — Outbox transacional e eventos internos
 
-**Status:** proposto  
+**Status:** aceito  
 **Data:** 2026-11-20  
 **Decisores:** arquitetura, backend  
 **Relacionado:** `docs/architecture/architecture-plan.md`
@@ -49,4 +49,4 @@ Adotar outbox transacional em tabela `outbox_events`, com worker interno lendo e
 
 ## Status
 
-Proposto. Requer aprovação humana antes da implementação.
+Aceito em 2026-11-20. Implementação condicionada à spec aprovada.

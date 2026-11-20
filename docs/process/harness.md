@@ -20,7 +20,7 @@ Princípios:
 - **humano decide escopo, hipótese e risco aceitável**;
 - **nenhuma decisão de fairness, privacidade ou segurança é automática**.
 
-> **Estado atual:** o repositório está na fase de organização. Nenhum código de produto foi implementado. O harness existe para orientar a próxima fase, não para justificar implementação sem aprovação.
+> **Estado atual:** a `foundation-platform` foi aprovada em 2026-11-20 e as decisões Q-01..Q-50 estão registradas. As demais specs seguem em revisão. Nenhum código de produto foi implementado. O harness orienta a implementação da fundação e a revisão das demais specs.
 
 ---
 

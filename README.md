@@ -4,11 +4,13 @@ RAIRE é uma plataforma de descoberta e conexão entre profissionais autônomos 
 
 ## Estado atual
 
-**Fase de organização e planejamento. Nenhum código de produto foi implementado ainda.**
+**Fase de planejamento concluída para a fundação. Nenhum código de produto foi implementado ainda.**
 
 O que está pronto:
 
 - PRD revisado (v1.0);
+- decisões Q-01..Q-50 aprovadas;
+- `foundation-platform` aprovada;
 - harness de agentes, comandos e gates;
 - specs com critérios de aceite, tickets e planos de implementação;
 - arquitetura, ADRs, segurança, privacidade, métricas e roadmap;
@@ -22,8 +24,8 @@ Review da spec foundation: [docs/status/2026-11-20-foundation-review-checklist.m
 
 O que vem depois:
 
-1. revisão e aprovação humana das specs;
-2. implementação por spec/ticket, com testes primeiro;
+1. implementar `FND-01`..`FND-19` na ordem do task board;
+2. revisar e aprovar as demais specs;
 3. gates de review, QA, segurança e trust & safety;
 4. evidências e preparação de piloto.
 
@@ -32,6 +34,7 @@ O que vem depois:
 - [PRD revisado](docs/product/prd.md) — escopo, requisitos, critérios de aceite e roadmap.
 - [PRD v0.1 (arquivo)](docs/product/prd-v0.1.md) — versão anterior preservada para rastreabilidade.
 - [Catálogo detalhado de requisitos](docs/product/requirements-catalog.md) — RF-01 a RF-20.
+- [Decisões aprovadas](docs/product/decisions-2026-11-20.md) — Q-01 a Q-50.
 - [Personas e jornadas](docs/product/personas-and-journeys.md).
 - [Métricas e experimentos](docs/product/metrics-and-experiments.md).
 - [Riscos](docs/product/risks.md).

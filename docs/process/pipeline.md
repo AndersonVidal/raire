@@ -435,15 +435,17 @@ Checklist detalhado em `docs/process/ci-cd.md`.
 
 ## 16. Primeiro ciclo de trabalho
 
-| Ordem | Trabalho | Dono | Depende de |
+**Status:** fundação aprovada em 2026-11-20; implementação pode começar.
+
+| Ordem | Trabalho | Dono | Status |
 | --- | --- | --- | --- |
-| 1 | Revisar PRD v1.0 e responder Q-07, Q-44–Q-50 | Todos | — |
-| 2 | Revisar spec foundation-platform | Victor | Q-07, Q-44–Q-50 |
-| 3 | Revisar spec web-experience | Anderson | foundation |
-| 4 | Revisar specs local-discovery e service-request | Victor/Anderson | foundation |
-| 5 | Revisar spec trust-reputation | Felipe | service-request |
-| 6 | Revisar spec fair-visibility | Victor | local-discovery |
-| 7 | Aprovar specs (humano) | Fundador | revisões |
-| 8 | Refinar tickets e iniciar F1 | Todos | specs aprovadas |
+| 1 | Revisar PRD e decidir Q-01..Q-50 | Todos | concluído |
+| 2 | Revisar e aprovar foundation-platform | Victor + humano | concluído |
+| 3 | Implementar FND-01..FND-19 | Victor/Anderson/Felipe | próximo |
+| 4 | Revisar e aprovar web-experience | Anderson | pendente |
+| 5 | Revisar e aprovar local-discovery e service-request | Victor/Anderson | pendente |
+| 6 | Revisar e aprovar trust-reputation | Felipe | pendente |
+| 7 | Revisar e aprovar fair-visibility | Victor | pendente |
+| 8 | Preparar piloto | Todos | pendente |
 
 Detalhes em `docs/team/task-board.md` e `docs/team/sprint-plan.md`.

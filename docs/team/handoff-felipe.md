@@ -3,7 +3,8 @@
 **Papel:** QA + segurança + privacidade + DevOps  
 **Ownership:** `trust-reputation`; gates de segurança, privacidade, QA e release; CI/CD e observabilidade  
 **Revisa:** segurança, LGPD, PII, abuso, moderação, reputação, evidências  
-**Não aprova:** o próprio código; exceção de segurança sozinho
+**Não aprova:** o próprio código; exceção de segurança sozinho  
+**Status (2026-11-20):** `foundation-platform` aprovada; `trust-reputation` em revisão; pode iniciar `FND-08`/`FND-09`/`FND-10`/`FND-17`/`FND-19`.
 
 ---
 
@@ -104,17 +105,19 @@ Detalhes no [`task-board.md`](task-board.md) e em `specs/*/tickets.md`.
 
 ---
 
-## 6. Perguntas que você precisa responder
+## 6. Decisões que você aplica
 
-- Q-06: verificação de identidade obrigatória?
-- Q-09: confirmação de contato por e-mail/telefone?
-- Q-10: retenção de documentos.
-- Q-30: como confirmar serviço?
-- Q-31: moderação prévia ou pós-publicação?
-- Q-32..Q-36: avaliação, edição, verificação, denúncia anônima, SLA.
-- Q-38..Q-43: bases legais, retenção, DPO, transferência, incidente, pesquisa.
+**Status:** decididas em 2026-11-20; registro em `docs/product/decisions-2026-11-20.md`.
 
-Registre a decisão em `docs/product/open-questions.md` e, se jurídico, em `docs/security/privacy-and-lgpd.md`.
+- Q-06: verificação de identidade opcional; e-mail confirmado obrigatório.
+- Q-09: confirmação por e-mail; telefone opcional.
+- Q-10: retenção de documentos 90 dias após decisão (fora do 1º ciclo).
+- Q-30: confirmação de um lado + contestação.
+- Q-31: moderação pós-publicação, fila por risco.
+- Q-32..Q-36: avaliação sem confirmação mútua; edição 24 h; verificação manual; denúncia identificada; SLA de risco físico 4 h.
+- Q-38..Q-43: bases legais e retenção propostas; DPO a designar; transferência por fornecedor; runbook; pesquisa com consentimento.
+
+Aplique as decisões e mantenha a validação jurídica/DPIA antes do piloto.
 
 ---
 

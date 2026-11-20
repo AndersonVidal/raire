@@ -51,8 +51,8 @@ Nenhuma; implementação não iniciada.
 
 ## 8. Riscos residuais
 
-- Spec em revisão.
+- Implementação não iniciada; evidências de código ainda não existem.
 
 ## 9. Conclusão
 
-`pendente`
+`pendente` — spec aprovada; QA de produto começa na implementação.

@@ -3,7 +3,7 @@
 **Status:** concluído (planejamento)  
 **Escopo:** PRD, docs, specs, tickets, planos e pipeline  
 **Fora de escopo:** código, migrations, testes de produto, deploy  
-**Veredito:** **aprovado com ressalvas para planejamento**; implementação **bloqueada** até aprovação humana
+**Veredito:** **foundation aprovada; demais specs em revisão**; implementação da foundation liberada; piloto bloqueado até DPIA/jurídico
 
 ---
 
@@ -25,41 +25,42 @@
 
 A organização está consistente e navegável:
 
-- PRD v1.0 revisado e rastreável;
+- PRD v1.0 revisado, aprovado e rastreável;
 - 6 specs com requisitos numerados, critérios de aceite, tickets e planos;
-- 67 tickets de feature + planejamento/piloto no CSV;
+- 72 tickets de feature + planejamento/piloto no CSV (96 linhas);
 - arquitetura, dados, API, segurança, privacidade e fairness documentados;
 - pipeline, RACI, handoffs e sprint plan;
 - QA documental sem links quebrados, sem código e sem segredo.
 
-O que impede implementação:
+O que continua pendente:
 
-1. specs não aprovadas por humano;
-2. questões bloqueantes sem decisão;
-3. ADRs ainda propostos;
-4. DPIA/jurídico pendente para piloto;
-5. região/categorias do piloto não definidas.
+1. revisão das specs que não são a fundação;
+2. DPIA/jurídico antes do piloto;
+3. região/categorias reais do piloto antes de F6;
+4. implementação, testes e evidências da fundação.
 
 ---
 
-## 3. Bloqueios
+## 3. Bloqueios e decisões
 
-| ID | Bloqueio | Gate | Dono | Correção esperada |
+| ID | Item | Gate | Dono | Status |
 | --- | --- | --- | --- | --- |
-| B-01 | Specs em revisão, nenhuma aprovada | produto/arquitetura | Fundador | registrar aprovação |
-| B-02 | Q-07, Q-44–Q-50 sem decisão | arquitetura | Victor | decidir antes de F1 |
-| B-03 | Q-08, Q-14–Q-18, Q-37 sem decisão | produto/arquitetura | Victor + Anderson | decidir antes de F2 |
-| B-04 | Q-25–Q-31 sem decisão | produto/segurança | Anderson + Felipe | decidir antes de F3 |
-| B-05 | Q-06, Q-09, Q-10, Q-32–Q-36 sem decisão | segurança/trust | Felipe | decidir antes de F4 |
-| B-06 | Q-19–Q-24 sem decisão | fairness | Victor + Anderson | decidir antes de F5 |
-| B-07 | DPIA e retenção não validadas | jurídico/privacidade | Felipe + jurídico | concluir antes do piloto |
-| B-08 | Região/categorias do piloto indefinidas | produto | Anderson | decidir antes de F6 |
-| B-09 | ADRs 0001–0006 propostos | arquitetura | Victor | aceitar antes de F1 |
-| B-10 | SQLite local ≠ Postgres produção | arquitetura/QA | Victor + Felipe | testes de contrato + staging |
+| B-01 | Aprovação da foundation | produto/arquitetura | Humano | resolvido em 2026-11-20 |
+| B-02 | Q-07, Q-44–Q-50 | arquitetura | Victor | decididas |
+| B-03 | Q-08, Q-14–Q-18, Q-37 | produto/arquitetura | Victor + Anderson | decididas |
+| B-04 | Q-25–Q-31 | produto/segurança | Anderson + Felipe | decididas |
+| B-05 | Q-06, Q-09, Q-10, Q-32–Q-36 | segurança/trust | Felipe | decididas |
+| B-06 | Q-19–Q-24 | fairness | Victor + Anderson | decididas; ativação depende de simulação |
+| B-07 | DPIA e retenção | jurídico/privacidade | Felipe + jurídico | pendente antes do piloto |
+| B-08 | Região/categorias reais do piloto | produto | Anderson | pendente antes de F6 |
+| B-09 | ADRs 0001–0006 | arquitetura | Humano | aceitos em 2026-11-20 |
+| B-10 | SQLite local ≠ Postgres produção | arquitetura/QA | Victor + Felipe | mitigação: testes de contrato + staging |
 
 ---
 
 ## 4. Achados por gate
+
+> **Atualização 2026-11-20:** as ressalvas de produto, arquitetura, QA e fairness foram resolvidas com as decisões Q-01..Q-50 e a aprovação da foundation. Permanecem apenas região real do piloto e DPIA/jurídico.
 
 ### 4.1 Produto
 
@@ -138,19 +139,21 @@ O que impede implementação:
 
 ---
 
-## 6. O que o humano deve decidir
+## 6. O que o humano já decidiu (2026-11-20)
 
-1. Aprovar ou rejeitar as 6 specs.
-2. Responder as questões bloqueantes.
-3. Aceitar ou revisar os defaults de fairness.
-4. Confirmar a estratégia SQLite/Postgres.
-5. Confirmar o escopo da fatia técnica 1.
-6. Autorizar (ou não) o início de F1.
-7. Definir região/categorias do piloto antes de F6.
-8. Nomear jurídico/DPO para LGPD.
+1. Aprovou as recomendações de Q-01..Q-50.
+2. Aprovou a `foundation-platform` v1.1.
+3. Aceitou os ADRs 0001–0006.
+4. Aprovou os parâmetros da política de fairness (ativação condicionada a simulação).
+5. Autorizou o início da F1.
 
----
+## 7. O que continua pendente
 
-## 7. Conclusão
+1. Revisar e aprovar as demais specs.
+2. Definir região/categorias reais do piloto antes de F6.
+3. Nomear jurídico/DPO e concluir DPIA antes do piloto.
+4. Implementar, testar e revisar a fundação.
 
-A documentação está pronta para revisão humana. Não há código, teste de produto, migration ou deploy. A implementação deve começar somente após aprovação das specs e decisão das questões bloqueantes.
+## 8. Conclusão
+
+A documentação está pronta e a fundação foi aprovada. Não há código, teste de produto, migration ou deploy. A implementação começa pelo `FND-01`; o piloto continua bloqueado até DPIA/jurídico.

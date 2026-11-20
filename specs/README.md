@@ -6,7 +6,7 @@ Uma pasta por feature. **Nenhum código nasce sem spec com status `aprovada`** (
 
 | Feature | Status | Dono | Requisitos | Depende de |
 | --- | --- | --- | --- | --- |
-| [foundation-platform](foundation-platform/spec.md) | em revisão | Victor | RF-01, RF-02, RF-03, RF-04, RF-05, RF-19; RNF-01, RNF-05, RNF-08, RNF-09, RNF-14 | — |
+| [foundation-platform](foundation-platform/spec.md) | aprovada | Victor | RF-01, RF-02, RF-03, RF-04, RF-05, RF-19; RNF-01, RNF-05, RNF-08, RNF-09, RNF-14 | — |
 | [web-experience](web-experience/spec.md) | em revisão | Anderson | RNF-10, RNF-11, RNF-12; jornadas 5.1–5.10 | foundation |
 | [local-discovery](local-discovery/spec.md) | em revisão | Victor | RF-06, RF-07, RF-20; RNF-02, RNF-13, RNF-16 | foundation |
 | [service-request](service-request/spec.md) | em revisão | Anderson | RF-08, RF-09, RF-10, RF-11, RF-12, RF-16; RNF-05, RNF-06 | foundation |
@@ -49,8 +49,8 @@ Fairness básica (caps, explicação, telemetria) entra junto com `local-discove
 
 ## Aprovação
 
-Ver `docs/process/approvals.md`. Nenhuma spec está aprovada neste momento.
+Ver `docs/process/approvals.md`. A `foundation-platform` foi aprovada em 2026-11-20; as demais specs seguem em revisão.
 
 ## Estado da implementação
 
-Nenhum código de produto implementado. O trabalho atual é revisão de spec, refinamento de ticket e decisão de questões abertas.
+Nenhum código de produto implementado. A `foundation-platform` está aprovada e os tickets FND estão prontos; a implementação pode começar pelo `FND-01`.

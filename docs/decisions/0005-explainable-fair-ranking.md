@@ -1,6 +1,6 @@
 # ADR 0005 — Ranking explicável com camada de fairness
 
-**Status:** proposto  
+**Status:** aceito  
 **Data:** 2026-11-20  
 **Decisores:** produto, arquitetura, pesquisa, segurança  
 **Relacionado:** `docs/architecture/ranking-and-fairness.md`, `docs/product/prd.md` (seção 9)
@@ -62,4 +62,4 @@ Nenhum atributo sensível. Nenhuma posição paga. Política versionada, simulad
 
 ## Status
 
-Proposto. Requer aprovação humana antes da implementação.
+Aceito em 2026-11-20. Ativação da política condicionada a simulação offline, guardrails e revisão humana.

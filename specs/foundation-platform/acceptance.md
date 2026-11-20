@@ -1,6 +1,6 @@
 # foundation-platform — mapa de aceite
 
-**Status:** em revisão (testes propostos; caminhos podem mudar na implementação, mantendo a cobertura)  
+**Status:** aprovado em 2026-11-20 (AC-40..AC-60 adicionados na revisão 1.1)  
 **Spec:** `spec.md`  
 **Dono:** Victor  
 **QA:** Felipe
@@ -55,6 +55,27 @@
 | AC-37 | health/readiness | R-67 | I | `platform` › "health 200 e readiness falha sem banco" | pendente |
 | AC-38 | logs estruturados | R-64 | U | `platform` › "log contém correlation_id e não contém PII" | pendente |
 | AC-39 | feature flag default seguro | R-68 | I | `platform` › "flag desconhecida resolve off" | pendente |
+| AC-40 | e-mail não confirmado não publica | R-02 | U/I | `identity` › "publicar sem e-mail confirmado retorna EMAIL_NOT_CONFIRMED" | pendente |
+| AC-41 | mesma conta cliente e profissional | R-07 | I | `directory` › "conta com perfil profissional também atua como cliente" | pendente |
+| AC-42 | CSRF ausente/inválido | R-10 | Sec | `platform` › "POST sem CSRF retorna CSRF_INVALID" | pendente |
+| AC-43 | troca de senha revoga outras sessões | R-12 | I | `identity` › "password change mantém sessão atual e revoga as demais" | pendente |
+| AC-44 | preferência de contato e mascaramento | R-13, R-14, R-14.1 | U/I | `identity` › "preferência do perfil sobrescreve a da conta; telefone não verificado não aparece" | pendente |
+| AC-45 | selo de verificação honesto | R-31 | U/Sec | `directory` › "selo mostra apenas o que foi verificado" | pendente |
+| AC-46 | pausar/reativar perfil | R-32 | I | `directory` › "pause remove da busca; resume recoloca" | pendente |
+| AC-47 | reordenar/despublicar portfólio | R-36 | I | `directory` › "reorder e unpublish refletem no público" | pendente |
+| AC-48 | categoria/flag auditada | R-44, R-50 | I | `catalog` › "mudança de categoria/flag grava audit_event e métrica" | pendente |
+| AC-49 | termos/privacidade exibidos | R-57 | E2E | `web` › "cadastro mostra versão dos termos e privacidade" | pendente |
+| AC-50 | métricas de cadastro/publicação | R-65 | I | `platform` › "métricas de funil são registradas sem PII" | pendente |
+| AC-51 | rate limit de cadastro/reset/confirmação | R-08 | Sec | `identity` › "limites de signup/reset/resend são aplicados" | pendente |
+| AC-52 | idempotência de signup/confirmação/reset | RNF-05 | I | `identity` › "retry com mesma chave não duplica conta/token" | pendente |
+| AC-53 | paginação/filtros admin | R-46, R-50 | I | `moderation` › "admin lista com cursor e filtros" | pendente |
+| AC-54 | localização precisa cifrada e expurgada | R-24, R-53 | Sec/I | `directory` › "coordenada é cifrada e expurgada após 90 dias" | pendente |
+| AC-55 | disponibilidade válida | R-25 | U | `directory` › "janela sobreposta/inválida é rejeitada" | pendente |
+| AC-56 | imagem de portfólio validada | R-34 | U/I | `directory` › "imagem acima do limite/tipo inválido retorna INVALID_IMAGE" | pendente |
+| AC-57 | sucesso e sessão expirada na UI | R-61 | E2E | `web` › "estado de sucesso e sessão expirada são explícitos" | pendente |
+| AC-58 | solicitações de direitos no admin | R-19 | I | `identity` › "operador lista e resolve account_request" | pendente |
+| AC-59 | admin de categorias/flags | R-44, R-50 | I | `catalog` › "operador cria/desativa categoria e altera flag" | pendente |
+| AC-60 | copy PT-BR | R-63 | U | `web` › "copy revisada, sem jargão ou promessa enganosa" | pendente |
 
 ## Cenários Gherkin
 
@@ -104,6 +125,61 @@ Cenário: exclusão de conta
   Então meus dados públicos são anonimizados
   E meus dados de contato são removidos
   E a auditoria é preservada
+
+Cenário: e-mail não confirmado não publica
+  Dado que criei conta mas não confirmei o e-mail
+  Quando tento publicar um perfil
+  Então recebo EMAIL_NOT_CONFIRMED
+  E o perfil continua em rascunho
+
+Cenário: e-mail duplicado não enumera
+  Dado que já existe uma conta com o e-mail informado
+  Quando tento criar outra conta com o mesmo e-mail
+  Então recebo a mesma resposta de sucesso genérica
+  E nenhum dado da conta existente é revelado
+
+Cenário: CSRF inválido é rejeitado
+  Dado que estou autenticado
+  Quando envio um POST sem token CSRF válido
+  Então recebo CSRF_INVALID
+  E nenhuma alteração é persistida
+
+Cenário: troca de senha revoga outras sessões
+  Dado que estou autenticado em dois dispositivos
+  Quando troco a senha informando a senha atual
+  Então a sessão atual permanece
+  E a outra sessão é revogada
+
+Cenário: preferência de contato
+  Dado que minha conta prefere e-mail
+  E meu perfil prefere telefone
+  Quando alguém consulta meu perfil público
+  Então o contato permanece mascarado até consentimento
+  E o canal do perfil é usado quando liberado
+
+Cenário: localização precisa é protegida
+  Dado que informei uma coordenada precisa
+  Quando consulto meu perfil público
+  Então vejo apenas cidade/bairro e faixa de distância
+  E a coordenada não aparece na resposta, log ou evento
+
+Cenário: disponibilidade inválida é rejeitada
+  Dado que informo uma janela com fim antes do início
+  Quando tento salvar o perfil
+  Então recebo INVALID_AVAILABILITY
+  E a disponibilidade anterior é preservada
+
+Cenário: admin altera categoria e flag com auditoria
+  Dado que sou operador com MFA
+  Quando desativo uma categoria e desligo uma flag
+  Então cada ação grava audit_event e métrica
+  E o efeito é imediato na busca/feature
+
+Cenário: direitos do titular
+  Dado que solicito exportação/exclusão
+  Quando o operador resolve a solicitação
+  Então a solicitação é registrada com data e resultado
+  E o titular recebe a resposta aplicável
 ```
 
 ## Evidências
@@ -118,10 +194,10 @@ Cenário: exclusão de conta
 
 | Tipo | Quantidade | Observação |
 | --- | --- | --- |
-| U | 12 | domínio, validação, catálogo |
-| I | 16 | banco, sessão, perfil, admin |
+| U | 15 | domínio, validação, catálogo, disponibilidade, contato |
+| I | 25 | banco, sessão, perfil, catálogo, admin, direitos |
 | C | 3 | contrato público |
-| E2E | 2 | onboarding e admin |
+| E2E | 5 | onboarding, admin, estados, termos |
 | A11y | 3 | teclado, 360 px, reduced motion |
-| Sec | 5 | PII, authz, rate limit, MFA |
+| Sec | 8 | PII, authz, CSRF, rate limit, MFA, criptografia |
 | Perf | 1 | health/readiness |

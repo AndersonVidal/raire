@@ -43,9 +43,9 @@
 
 ## 4. Riscos residuais
 
-- Spec em revisão.
+- Implementação não iniciada; controles ainda não testados em código.
 
 ## 5. O que o humano deve olhar
 
-- Aprovação da spec.
+- Spec aprovada em 2026-11-20.
 - Modelo de ameaças em `docs/security/threat-model.md`.

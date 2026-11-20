@@ -1,6 +1,6 @@
 # ADR 0006 — Web server-rendered mobile-first
 
-**Status:** proposto  
+**Status:** aceito  
 **Data:** 2026-11-20  
 **Decisores:** produto, frontend, arquitetura  
 **Relacionado:** `docs/architecture/architecture-plan.md`
@@ -50,4 +50,4 @@ Adotar web server-rendered com `html/template`, CSS próprio e JS mínimo quando
 
 ## Status
 
-Proposto. Requer aprovação humana antes da implementação.
+Aceito em 2026-11-20. Implementação condicionada à spec aprovada.

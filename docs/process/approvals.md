@@ -27,21 +27,22 @@
 
 | Item | Versão | Status | Aprovadores pendentes | Observação |
 | --- | --- | --- | --- | --- |
-| PRD v1.0 | 1.0 | em revisão | produto, arquitetura, segurança | nenhum código autorizado |
-| foundation-platform | 1.0 | em revisão | Victor, Felipe | depende de Q-07, Q-44–Q-50 |
+| PRD v1.0 | 1.0 | aprovado | — | aprovado em 2026-11-20; nenhum código autorizado por si só |
+| Decisões Q-01..Q-50 | 1.1 | aprovado | — | registro em `docs/product/decisions-2026-11-20.md`; jurídico pendente antes do piloto |
+| foundation-platform | 1.1 | aprovada | — | aprovada em 2026-11-20; tickets FND prontos |
 | web-experience | 1.0 | em revisão | Anderson, Victor | depende de foundation |
 | local-discovery | 1.0 | em revisão | Victor, Anderson | depende de foundation |
 | service-request | 1.0 | em revisão | Anderson, Felipe | depende de foundation |
 | trust-reputation | 1.0 | em revisão | Felipe, Victor | depende de service-request |
 | fair-visibility | 1.0 | em revisão | Victor, Felipe, Anderson | depende de local-discovery |
-| ADR 0001 | 1.0 | proposto | Victor | aguarda decisão |
-| ADR 0002 | 1.0 | proposto | Victor, Felipe | SQLite local/Postgres alvo |
-| ADR 0003 | 1.0 | proposto | Victor | outbox |
-| ADR 0004 | 1.0 | proposto | Victor, Felipe | sessão/RBAC/MFA |
-| ADR 0005 | 1.0 | proposto | Victor, Anderson, Felipe | ranking/fairness |
-| ADR 0006 | 1.0 | proposto | Anderson, Victor | web server-rendered |
-| Política de fairness v1 | 1.0 | proposta | produto + pesquisa + segurança | defaults do PRD |
-| DPIA | — | não iniciada | jurídico/privacidade | antes do piloto |
+| ADR 0001 | 1.0 | aceito | — | aprovado em 2026-11-20 |
+| ADR 0002 | 1.0 | aceito | — | SQLite local/Postgres alvo; aprovado em 2026-11-20 |
+| ADR 0003 | 1.0 | aceito | — | outbox; aprovado em 2026-11-20 |
+| ADR 0004 | 1.0 | aceito | — | sessão/RBAC/MFA; aprovado em 2026-11-20 |
+| ADR 0005 | 1.0 | aceito | — | ranking/fairness; ativação depende de simulação |
+| ADR 0006 | 1.0 | aceito | — | web server-rendered; aprovado em 2026-11-20 |
+| Política de fairness v1 | 1.0 | aprovada (parâmetros) | — | ativação condicionada a simulação offline |
+| DPIA | — | pendente | jurídico/privacidade | antes do piloto |
 
 ---
 
@@ -49,7 +50,12 @@
 
 | Data | Item | Aprovador | Decisão | Ressalvas | Prazo |
 | --- | --- | --- | --- | --- | --- |
-| — | — | — | — | — | — |
+| 2026-11-20 | PRD v1.0 | Humano responsável (instrução registrada) | aprovado | implementação continua condicionada à spec aprovada | — |
+| 2026-11-20 | Q-01..Q-50 | Humano responsável (instrução registrada) | aprovado | Q-38–Q-43 exigem validação jurídica/DPIA antes do piloto; Q-01/Q-03/Q-40 pendências operacionais antes de F6 | antes do piloto |
+| 2026-11-20 | foundation-platform v1.1 | Humano responsável (instrução registrada) | aprovada | must-fix e should-fix integrados; AC-40..AC-60 adicionados | — |
+| 2026-11-20 | ADRs 0001–0006 | Humano responsável (instrução registrada) | aceito | ADR 0005 tem ativação condicionada a simulação | — |
+| 2026-11-20 | Política de fairness v1 (parâmetros) | Humano responsável (instrução registrada) | aprovado | ativação só após simulação offline e revisão | antes de F5 |
+| — | DPIA | — | pendente | jurídico/privacidade | antes do piloto |
 
 **Decisões possíveis:** `aprovado`, `aprovado com ressalvas`, `rejeitado`, `adiado`.
 

@@ -1,6 +1,6 @@
 # ADR 0001 — Backend em Go com monólito modular
 
-**Status:** proposto  
+**Status:** aceito  
 **Data:** 2026-11-20  
 **Decisores:** arquitetura, backend, produto  
 **Relacionado:** `docs/architecture/architecture-plan.md`
@@ -52,4 +52,4 @@ Microserviços só entram com gatilho medido: escala, times independentes, deplo
 
 ## Status
 
-Proposto. Requer aprovação humana antes da implementação.
+Aceito em 2026-11-20. Implementação condicionada à spec aprovada.

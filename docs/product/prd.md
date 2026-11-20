@@ -1,6 +1,6 @@
 # PRD — RAIRE: Descoberta Local Justa
 
-**Status:** revisado para planejamento; aguarda aprovação humana  
+**Status:** aprovado em 2026-11-20 (instrução humana registrada)  
 **Versão:** 1.0  
 **Data da revisão:** 2026-11-20  
 **Versão anterior:** 0.1 (`docs/product/prd-v0.1.md`)  
@@ -615,18 +615,20 @@ Detalhes em `docs/team/raci.md`, `docs/team/task-board.md` e `docs/team/README.m
 
 ## 15. Critérios de aceite e maturidade do PRD
 
+**Status:** aprovado em 2026-11-20 para planejamento; região real do piloto e DPIA continuam pendentes antes de F6.
+
 O PRD será considerado pronto para orientar a implementação quando:
 
-- [ ] Problema, visão, personas e jornadas estiverem revisados por produto e pesquisa.
-- [ ] RFs e RNFs tiverem prioridade e critérios verificáveis.
-- [ ] Escopo do MVP, fatia técnica e não objetivos estiverem explícitos.
-- [ ] Região, categorias e metas do piloto estiverem definidas.
-- [ ] Política de fairness e privacidade tiver revisão de segurança/jurídico.
-- [ ] Riscos tiverem dono e mitigação.
-- [ ] Perguntas abertas tiverem decisão ou plano de investigação.
-- [ ] Specs iniciais estiverem derivadas e rastreadas aos RFs.
-- [ ] Harness, pipeline e divisão de trabalho estiverem operacionais.
-- [ ] Nenhuma implementação tiver começado sem aprovação humana das specs.
+- [x] Problema, visão, personas e jornadas estiverem revisados por produto e pesquisa.
+- [x] RFs e RNFs tiverem prioridade e critérios verificáveis.
+- [x] Escopo do MVP, fatia técnica e não objetivos estiverem explícitos.
+- [ ] Região real, metas finais e operação do piloto estiverem definidas.
+- [ ] Política de fairness e privacidade tiver revisão de segurança/jurídico final.
+- [x] Riscos tiverem dono e mitigação.
+- [x] Perguntas abertas tiverem decisão ou plano de investigação.
+- [x] Specs iniciais estiverem derivadas e rastreadas aos RFs.
+- [x] Harness, pipeline e divisão de trabalho estiverem operacionais.
+- [x] Nenhuma implementação tiver começado sem aprovação humana das specs.
 
 ### 15.1 Estados de maturidade
 
@@ -646,6 +648,8 @@ A aprovação exige registro humano de produto, arquitetura e segurança/privaci
 ---
 
 ## 16. Decisões abertas
+
+**Status:** decididas em 2026-11-20. Registro canônico em `docs/product/decisions-2026-11-20.md`; a tabela abaixo mantém o default histórico.
 
 Detalhes e prazos em `docs/product/open-questions.md`.
 

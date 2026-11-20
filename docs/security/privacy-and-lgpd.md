@@ -1,10 +1,11 @@
 # Privacidade e LGPD — RAIRE
 
 **Status:** proposta para revisão jurídica  
-**Versão:** 1.0  
+**Versão:** 1.1  
 **Dono:** Felipe  
 **Aprovador:** jurídico/privacidade + fundador  
-**Relacionado:** `docs/product/prd.md` (seção 10), `docs/process/security-privacy.md`
+**Relacionado:** `docs/product/prd.md` (seção 10), `docs/process/security-privacy.md`  
+**Decisão de planejamento:** Q-38–Q-43 aprovadas em 2026-11-20; validação jurídica e DPIA continuam obrigatórias antes do piloto (`docs/product/decisions-2026-11-20.md`).
 
 > Bases legais, prazos e textos são propostas. Nada aqui substitui revisão jurídica antes do piloto.
 

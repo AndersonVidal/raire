@@ -2,7 +2,7 @@
 
 Este documento é o índice central da base de conhecimento do projeto RAIRE. Ele facilita navegação, organização, rastreabilidade e contexto para agentes de IA.
 
-**Estado:** organização e planejamento. Nenhum código implementado.
+**Estado:** fundação aprovada; demais specs em revisão; nenhum código implementado.
 
 ---
 
@@ -33,6 +33,7 @@ Este documento é o índice central da base de conhecimento do projeto RAIRE. El
 | [risks.md](product/risks.md) | riscos e mitigação |
 | [roadmap.md](product/roadmap.md) | fases F0–F7 |
 | [open-questions.md](product/open-questions.md) | decisões pendentes e defaults |
+| [decisions-2026-11-20.md](product/decisions-2026-11-20.md) | decisões aprovadas Q-01..Q-50 |
 | [catalog-seed.md](product/catalog-seed.md) | seed inicial proposto |
 | [transparency-ranking.md](product/transparency-ranking.md) | copy pública do ranking |
 
@@ -58,6 +59,7 @@ Este documento é o índice central da base de conhecimento do projeto RAIRE. El
 - [ranking-and-fairness.md](architecture/ranking-and-fairness.md)
 - [data-model.md](architecture/data-model.md)
 - [api-contracts.md](architecture/api-contracts.md)
+- [spec-boundaries.md](architecture/spec-boundaries.md)
 
 ## Process
 

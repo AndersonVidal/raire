@@ -3,7 +3,8 @@
 **Papel:** Arquiteto + backend + ranking  
 **Ownership:** `foundation-platform`, `local-discovery`, `fair-visibility`  
 **Revisa:** arquitetura, backend, migrations, contratos, performance, fairness técnica  
-**Não aprova:** o próprio código; política de fairness sozinho
+**Não aprova:** o próprio código; política de fairness sozinho  
+**Status (2026-11-20):** `foundation-platform` aprovada; decisões Q-07/Q-44–Q-50 registradas; pode iniciar `FND-01`.
 
 ---
 
@@ -81,10 +82,13 @@
 | --- | --- | --- |
 | 1 | FND-01 | estrutura modular, contratos e regras de dependência |
 | 2 | FND-02 | modelo de dados, migrations e seed |
-| 3 | FND-03 | identidade, sessão, RBAC e rate limit |
-| 4 | FND-05 | catálogo e sinônimos |
-| 5 | FND-06 | perfil profissional, área e disponibilidade |
-| 6 | LCL-01..LCL-03 | read model, retrieval e ranking baseline |
+| 3 | FND-03 | identidade, sessão, RBAC, rate limit, CSRF |
+| 4 | FND-04 | confirmação, reset, MFA e recovery codes |
+| 5 | FND-05 | catálogo e sinônimos |
+| 6 | FND-06 | perfil, área, disponibilidade e contato |
+| 7 | FND-15 | segurança de conta e abuso |
+| 8 | FND-16 | dados sensíveis e localização |
+| 9 | LCL-01..LCL-03 | read model, retrieval e ranking baseline |
 
 Detalhes no [`task-board.md`](task-board.md) e em `specs/*/tickets.md`.
 
@@ -105,18 +109,20 @@ Detalhes no [`task-board.md`](task-board.md) e em `specs/*/tickets.md`.
 
 ---
 
-## 6. Perguntas que você precisa responder
+## 6. Decisões que você aplica
 
-- Q-07: um perfil por conta no MVP?
-- Q-44: SQLite local/CI e Postgres produção?
-- Q-45: web server-rendered no MVP?
-- Q-46: sessão por cookie + CSRF?
-- Q-47: MFA TOTP?
-- Q-48: outbox interno?
-- Q-49: busca geoespacial isolada por interface?
-- Q-50: feature flags em banco?
+**Status:** decididas em 2026-11-20; registro em `docs/product/decisions-2026-11-20.md`.
 
-Registre a decisão em `docs/product/open-questions.md` e, se for estrutural, em ADR.
+- Q-07: um perfil por conta.
+- Q-44: SQLite local/CI + Postgres produção.
+- Q-45: web server-rendered.
+- Q-46: sessão por cookie + CSRF.
+- Q-47: MFA TOTP + recovery codes.
+- Q-48: outbox interno.
+- Q-49: busca geoespacial isolada por interface.
+- Q-50: feature flags em banco.
+
+Implemente conforme a spec `foundation-platform` v1.1 e registre qualquer desvio em ADR.
 
 ---
 

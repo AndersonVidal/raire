@@ -1,6 +1,6 @@
 # QA Documental — 2026-11-20
 
-**Status:** concluído (documentação apenas)  
+**Status:** concluído (documentação apenas) — revalidado após a aprovação da fundação  
 **Escopo:** PRD, docs, specs, tickets, planos e links  
 **Fora de escopo:** código, migrations, testes de produto, deploy  
 **Executado por:** Felipe (simulado no harness)
@@ -22,14 +22,14 @@ Verificar se a organização está internamente consistente, navegável e pronta
 | 3 | Arquivos vazios | tamanho > 0 | **OK** |
 | 4 | RF-01..RF-20 cobertos | busca dos IDs nas specs | **OK** — 20/20 |
 | 5 | Specs completas | 8 artefatos por feature | **OK** — 6/6 |
-| 6 | Tickets de feature no board | comparação specs × task board | **OK** — 67/67 |
-| 7 | Tickets no CSV | comparação specs × CSV | **OK** — 67/67 + planejamento/piloto = 91 |
+| 6 | Tickets de feature no board | comparação specs × task board | **OK** — 72/72 |
+| 7 | Tickets no CSV | comparação specs × CSV | **OK** — 72/72 + planejamento/piloto = 96 |
 | 8 | IDs duplicados no CSV | agrupamento por ID | **OK** — nenhum |
 | 9 | Código de produto | busca por `.go`, `.ts`, `.tsx`, `.js`, `.sql`, `.yaml` | **OK** — nenhum |
 | 10 | Segredos | padrões de chave/token | **OK** — nenhum |
 | 11 | PII real | e-mails/telefones | **OK** — apenas `ana@example.test` sintético |
 | 12 | Encoding | U+FFFD e leitura UTF-8 | **OK** — nenhum caractere de substituição |
-| 13 | Aprovação indevida | status de specs/ADRs | **OK** — todas em revisão/propostas |
+| 13 | Aprovação indevida | status de specs/ADRs | **OK** — foundation aprovada por humano; demais em revisão; ADRs aceitos com registro |
 | 14 | Claim de implementação | busca por "implementado" | **OK** — apenas negações explícitas |
 
 ---

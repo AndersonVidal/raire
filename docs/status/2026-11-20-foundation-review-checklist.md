@@ -1,10 +1,10 @@
 # Review da Spec `foundation-platform` — Checklist
 
-**Status:** recomendação de review; aguarda revisão humana  
+**Status:** integrado; spec aprovada em 2026-11-20  
 **Data:** 2026-11-20  
 **Spec:** `specs/foundation-platform/spec.md`  
 **Reviewers recomendados:** Victor (arquitetura/backend), Anderson (produto/PII), Felipe (segurança/QA)  
-**Veredito recomendado:** **aprovar com ressalvas**, depois de corrigir os itens marcados como **must-fix**.
+**Veredito:** **aprovada com ressalvas resolvidas**; must-fix e should-fix integrados na versão 1.1.
 
 ---
 
@@ -18,6 +18,23 @@ Antes de aprovar, é necessário:
 2. corrigir 8 pontos must-fix;
 3. adicionar critérios de aceite para comportamentos já exigidos;
 4. confirmar as fronteiras com `trust-reputation`, `service-request` e `local-discovery`.
+
+### 1.1 Status de integração (2026-11-20)
+
+| Item | Status | Onde foi integrado |
+| --- | --- | --- |
+| MF-01 verificação shell | resolvido | spec R-31, AC-45 |
+| MF-02 troca de senha | resolvido | spec R-12, endpoint `/v1/me/password`, FND-15, AC-43 |
+| MF-03 e-mail duplicado | resolvido | spec seção 9, AC-02/AC-40, FND-15 |
+| MF-04 endpoints admin | resolvido | spec seção 7.1, API contracts, FND-17, AC-58/AC-59 |
+| MF-05 contato | resolvido | spec R-13/R-14/R-14.1, data model, FND-16, AC-44 |
+| MF-06 disponibilidade | resolvido | spec R-25, data model, FND-16, AC-55 |
+| MF-07 localização precisa | resolvido | spec R-24/R-53, data model, FND-16, AC-54 |
+| MF-08 fronteira trust | resolvido | spec 1.1, `docs/architecture/spec-boundaries.md` |
+| SF-01..SF-08 | resolvido | spec, API contracts, data model, FND-15..FND-19 |
+| AC-40..AC-60 | adicionados | `acceptance.md` |
+
+**Resultado:** spec aprovada em 2026-11-20; registro em `docs/process/approvals.md`.
 
 ---
 
@@ -249,15 +266,15 @@ Também afetam a fundação, mas são de outros donos:
 
 ## 7. Critérios para aprovar
 
-- [ ] 8 must-fix resolvidos;
-- [ ] ACs faltantes adicionados ou justificados;
-- [ ] fronteiras com trust/service/discovery confirmadas;
-- [ ] Q-07 e Q-44–Q-50 decididas;
-- [ ] ADRs 0001, 0002, 0004 e 0006 aceitos;
-- [ ] tickets FND-01..FND-06 refinados e com DoR;
-- [ ] riscos de SQLite/Postgres, PII e admin revisados por Felipe;
-- [ ] aprovação humana registrada em `docs/process/approvals.md`.
+- [x] 8 must-fix resolvidos;
+- [x] ACs faltantes adicionados ou justificados;
+- [x] fronteiras com trust/service/discovery confirmadas;
+- [x] Q-07 e Q-44–Q-50 decididas;
+- [x] ADRs 0001, 0002, 0004 e 0006 aceitos;
+- [x] tickets FND-01..FND-19 refinados e com DoR;
+- [x] riscos de SQLite/Postgres, PII e admin revisados por Felipe;
+- [x] aprovação humana registrada em `docs/process/approvals.md`.
 
 ## 8. Veredito
 
-**Aprovar com ressalvas** após os 8 must-fix. A spec é implementável e tem boa cobertura, mas os pontos acima precisam estar claros antes de escrever código para evitar retrabalho em autenticação, PII e fronteiras de moderação.
+**Aprovada em 2026-11-20** após a integração dos 8 must-fix e dos 8 should-fix. A spec está implementável e a fundação pode começar pelo `FND-01`.

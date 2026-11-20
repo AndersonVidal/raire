@@ -32,7 +32,7 @@
 
 | Fase | Tickets | Total |
 | --- | --- | --- |
-| F1 | FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-14 | 7 |
+| F1 | FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-14, FND-15, FND-16 | 9 |
 | F2 | LCL-01, LCL-02, LCL-03, LCL-06, LCL-07, LCL-08, LCL-09, LCL-10 | 8 |
 | F5 | FAV-01, FAV-02, FAV-03, FAV-04, FAV-05, FAV-07, FAV-08, FAV-09, FAV-10 | 9 |
 | Review | arquitetura, migrations, contratos, performance | contínuo |
@@ -41,7 +41,7 @@
 
 | Fase | Tickets | Total |
 | --- | --- | --- |
-| F1 | WEB-01, WEB-02, WEB-03, WEB-04, FND-07, FND-11, FND-12 | 7 |
+| F1 | WEB-01, WEB-02, WEB-03, WEB-04, FND-07, FND-11, FND-12, FND-18 | 8 |
 | F2 | LCL-04, LCL-05 (apoio), WEB-05, WEB-06 | 4 |
 | F3 | SRV-01, SRV-02, SRV-03, SRV-04, SRV-05, SRV-07, SRV-10, WEB-07, WEB-08 | 9 |
 | F4 | WEB-09 (apoio), WEB-10, WEB-12 | 3 |
@@ -52,7 +52,7 @@
 
 | Fase | Tickets | Total |
 | --- | --- | --- |
-| F1 | FND-08, FND-09, FND-10, FND-13, WEB-11 | 5 |
+| F1 | FND-08, FND-09, FND-10, FND-13, FND-17, FND-19, WEB-11 | 7 |
 | F3 | SRV-06, SRV-08, SRV-09 | 3 |
 | F4 | TRS-01, TRS-02, TRS-03, TRS-04, TRS-05, TRS-06, TRS-07, TRS-08, TRS-09, TRS-10, WEB-09, WEB-11 | 12 |
 | F6 | evidências, segurança, release, runbook | contínuo |
@@ -66,18 +66,18 @@
 
 | ID | Tarefa | Dono | Depende de | Status |
 | --- | --- | --- | --- | --- |
-| PLAN-01 | Revisar PRD v1.0 e responder Q-07, Q-44–Q-50 | Victor | — | proposto |
-| PLAN-02 | Revisar personas, jornadas e copy | Anderson | — | proposto |
-| PLAN-03 | Revisar riscos, segurança e LGPD | Felipe | — | proposto |
-| PLAN-04 | Revisar spec foundation-platform | Victor + Felipe | PLAN-01 | proposto |
+| PLAN-01 | Revisar PRD v1.0 e responder Q-07, Q-44–Q-50 | Victor | — | concluído |
+| PLAN-02 | Revisar personas, jornadas e copy | Anderson | — | em andamento |
+| PLAN-03 | Revisar riscos, segurança e LGPD | Felipe | — | em andamento |
+| PLAN-04 | Revisar spec foundation-platform | Victor + Felipe | PLAN-01 | concluído |
 | PLAN-05 | Revisar spec web-experience | Anderson + Felipe | PLAN-02 | proposto |
 | PLAN-06 | Revisar spec local-discovery | Victor + Anderson | PLAN-01 | proposto |
 | PLAN-07 | Revisar spec service-request | Anderson + Felipe | PLAN-02 | proposto |
 | PLAN-08 | Revisar spec trust-reputation | Felipe + Victor | PLAN-03 | proposto |
 | PLAN-09 | Revisar spec fair-visibility | Victor + Felipe | PLAN-06 | proposto |
-| PLAN-10 | Aprovar specs (humano) | Fundador | PLAN-04..PLAN-09 | bloqueado |
-| PLAN-11 | Refinar tickets e dependências | Todos | PLAN-10 | proposto |
-| PLAN-12 | Preparar ambiente e CI | Felipe | PLAN-10 | proposto |
+| PLAN-10 | Aprovar specs (humano) | Fundador | PLAN-04..PLAN-09 | concluído (foundation); demais em revisão |
+| PLAN-11 | Refinar tickets e dependências | Todos | PLAN-10 | pronto (foundation) |
+| PLAN-12 | Preparar ambiente e CI | Felipe | PLAN-10 | em andamento |
 
 ---
 
@@ -85,20 +85,25 @@
 
 | ID | Tarefa | Dono | Tam. | Depende de | Aceite | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| FND-01 | Estrutura modular, contratos e dependências | Victor | M | PLAN-10 | AC-37 | proposto |
-| FND-02 | Modelo de dados, migrations e seed | Victor | G | FND-01 | AC-01, AC-09..AC-18, AC-21, AC-24..AC-30 | proposto |
-| FND-03 | Identidade, sessão, RBAC e rate limit | Victor | G | FND-01, FND-02 | AC-01..AC-08 | proposto |
-| FND-04 | Confirmação de e-mail, reset e MFA | Victor | M | FND-03 | AC-03, AC-06, AC-08, AC-33 | proposto |
-| FND-05 | Catálogo, sinônimos e admin | Victor | M | FND-02 | AC-17, AC-28..AC-30 | proposto |
-| FND-06 | Perfil, área e disponibilidade | Victor | G | FND-02, FND-03 | AC-09..AC-16 | proposto |
-| FND-07 | Portfólio profissional | Anderson | M | FND-06 | AC-24..AC-27 | proposto |
-| FND-08 | Privacidade e direitos | Felipe | G | FND-03, FND-06 | AC-18..AC-23 | proposto |
-| FND-09 | Admin, suspensão e auditoria | Felipe | M | FND-03, FND-06 | AC-31..AC-33 | proposto |
-| FND-10 | Observabilidade, health e flags | Felipe | M | FND-01 | AC-37..AC-39 | proposto |
-| FND-11 | Web: conta | Anderson | G | FND-03, FND-04 | AC-01..AC-08, AC-34..AC-36 | proposto |
-| FND-12 | Web: onboarding e perfil | Anderson | G | FND-06, FND-11 | AC-09..AC-16, AC-34..AC-36 | proposto |
-| FND-13 | E2E, acessibilidade e evidência | Felipe | M | FND-11, FND-12 | AC-34..AC-37 | proposto |
-| FND-14 | OpenAPI, README e handoff | Victor | P | todos | todos | proposto |
+| FND-01 | Estrutura modular, contratos e dependências | Victor | M | PLAN-10 | AC-37 | pronto |
+| FND-02 | Modelo de dados, migrations e seed | Victor | G | FND-01 | AC-01, AC-09..AC-18, AC-21, AC-24..AC-30 | pronto |
+| FND-03 | Identidade, sessão, RBAC e rate limit | Victor | G | FND-01, FND-02 | AC-01..AC-08, AC-42, AC-51 | pronto |
+| FND-04 | Confirmação de e-mail, reset, MFA e recovery codes | Victor | M | FND-03 | AC-03, AC-06, AC-08, AC-33, AC-43 | pronto |
+| FND-05 | Catálogo, sinônimos e admin | Victor | M | FND-02 | AC-17, AC-28..AC-30, AC-48 | pronto |
+| FND-06 | Perfil, área, disponibilidade e contato | Victor | G | FND-02, FND-03 | AC-09..AC-16, AC-44..AC-46, AC-54, AC-55 | pronto |
+| FND-07 | Portfólio profissional | Anderson | M | FND-06 | AC-24..AC-27, AC-47, AC-56 | pronto |
+| FND-08 | Privacidade e direitos | Felipe | G | FND-03, FND-06 | AC-18..AC-23, AC-58 | pronto |
+| FND-09 | Admin, suspensão e auditoria | Felipe | M | FND-03, FND-06 | AC-31..AC-33, AC-53 | pronto |
+| FND-10 | Observabilidade, health e flags | Felipe | M | FND-01 | AC-37..AC-39, AC-50 | pronto |
+| FND-11 | Web: conta | Anderson | G | FND-03, FND-04 | AC-01..AC-08, AC-34..AC-36, AC-42 | pronto |
+| FND-12 | Web: onboarding e perfil | Anderson | G | FND-06, FND-11 | AC-09..AC-16, AC-34..AC-36 | pronto |
+| FND-13 | E2E, acessibilidade e evidência | Felipe | M | FND-11, FND-12 | AC-34..AC-37, AC-57, AC-60 | pronto |
+| FND-14 | OpenAPI, README e handoff | Victor | P | todos | todos | pronto |
+| FND-15 | Segurança de conta e abuso | Victor | M | FND-03, FND-04 | AC-40..AC-44, AC-51, AC-52 | pronto |
+| FND-16 | Dados sensíveis: contato, disponibilidade e localização | Victor | M | FND-06 | AC-44, AC-45, AC-54, AC-55 | pronto |
+| FND-17 | Admin completo: catálogo, flags e direitos | Felipe | M | FND-05, FND-09 | AC-48, AC-53, AC-58, AC-59 | pronto |
+| FND-18 | Web: estados, termos e acessibilidade | Anderson | M | FND-11, FND-12 | AC-49, AC-57, AC-60 | pronto |
+| FND-19 | QA de hardening e segurança | Felipe | M | FND-13, FND-15..FND-18 | AC-40..AC-60 | pronto |
 | WEB-01 | Design tokens e componentes | Anderson | M | — | AC-01..AC-05 | proposto |
 | WEB-02 | Layout, navegação e estados | Anderson | M | WEB-01 | AC-06..AC-10 | proposto |
 | WEB-03 | Conta acessível | Anderson | M | WEB-02, FND-11 | AC-11..AC-13 | proposto |
@@ -218,17 +223,18 @@ Acessibilidade, segurança e privacidade correm em paralelo ao caminho crítico,
 
 ---
 
-## 5. Dependências bloqueantes
+## 5. Dependências e decisões
 
-| Bloqueio | Afeta | Dono | Ação |
+| Item | Afeta | Dono | Status |
 | --- | --- | --- | --- |
-| Aprovação humana das specs | todos os tickets | Fundador | reunião de aprovação |
-| Q-07, Q-44–Q-50 | FND-01..FND-03 | Victor | decidir antes de F1 |
-| Q-08, Q-14–Q-18, Q-37 | LCL-01..LCL-05 | Victor + Anderson | decidir antes de F2 |
-| Q-25–Q-31 | SRV-01..SRV-05 | Anderson + Felipe | decidir antes de F3 |
-| Q-06, Q-09, Q-10, Q-32–Q-36 | TRS-01..TRS-09 | Felipe | decidir antes de F4 |
-| Q-19–Q-24 | FAV-01..FAV-08 | Victor + Anderson | decidir antes de F5 |
-| Q-01, Q-03, Q-38–Q-43 | PIL-01..PIL-10 | Todos | decidir antes de F6 |
+| Aprovação da foundation | FND-01..FND-19 | Humano | concluído em 2026-11-20 |
+| Q-07, Q-44–Q-50 | FND-01..FND-06 | Victor | decididas |
+| Q-08, Q-14–Q-18, Q-37 | LCL-01..LCL-05 | Victor + Anderson | decididas; spec em revisão |
+| Q-25–Q-31 | SRV-01..SRV-05 | Anderson + Felipe | decididas; spec em revisão |
+| Q-06, Q-09, Q-10, Q-32–Q-36 | TRS-01..TRS-09 | Felipe | decididas; spec em revisão |
+| Q-19–Q-24 | FAV-01..FAV-08 | Victor + Anderson | decididas; política depende de simulação |
+| Q-01, Q-03, Q-40 | PIL-01..PIL-10 | Todos | pendentes antes de F6 |
+| Q-38–Q-43 | PIL-01..PIL-10 | Jurídico/Felipe | decisão de planejamento; validação jurídica/DPIA antes do piloto |
 
 ---
 
@@ -236,15 +242,15 @@ Acessibilidade, segurança e privacidade correm em paralelo ao caminho crítico,
 
 ### Victor
 
-1. PLAN-01, PLAN-04, PLAN-06, PLAN-09.
-2. FND-01, FND-02, FND-03, FND-05, FND-06, FND-04, FND-14.
+1. PLAN-01, PLAN-04 (concluídos em 2026-11-20).
+2. FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-15, FND-16, FND-14.
 3. LCL-01, LCL-02, LCL-03, LCL-06, LCL-07, LCL-08, LCL-09, LCL-10.
 4. FAV-01, FAV-02, FAV-03, FAV-04, FAV-05, FAV-07, FAV-08, FAV-09, FAV-10.
 
 ### Anderson
 
 1. PLAN-02, PLAN-05, PLAN-07.
-2. WEB-01, WEB-02, WEB-03, WEB-04, FND-07, FND-11, FND-12.
+2. WEB-01, WEB-02, WEB-03, WEB-04, FND-07, FND-11, FND-12, FND-18.
 3. LCL-04, WEB-05, WEB-06.
 4. SRV-01..SRV-05, SRV-07, SRV-10, WEB-07, WEB-08.
 5. WEB-12, FAV-06, FAV-10 (apoio).
@@ -252,7 +258,7 @@ Acessibilidade, segurança e privacidade correm em paralelo ao caminho crítico,
 ### Felipe
 
 1. PLAN-03, PLAN-08, PLAN-12.
-2. FND-08, FND-09, FND-10, FND-13, WEB-11.
+2. FND-08, FND-09, FND-10, FND-17, FND-19, WEB-11.
 3. SRV-06, SRV-08, SRV-09.
 4. TRS-01..TRS-10, WEB-09.
 5. PIL-02..PIL-07, evidências e release.

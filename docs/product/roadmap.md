@@ -54,22 +54,23 @@ Transformar o PRD revisado em specs, tickets e pipeline executáveis.
 
 ### Entregas
 
-- PRD v1.0 revisado.
+- PRD v1.0 revisado e aprovado.
+- Decisões Q-01..Q-50 registradas.
 - Catálogo de requisitos, personas, métricas, riscos e questões abertas.
 - Specs: foundation, web-experience, local-discovery, service-request, trust-reputation, fair-visibility.
 - Critérios de aceite, tickets e planos de implementação.
-- ADRs 0001–0006.
+- ADRs 0001–0006 aceitos.
 - Harness, pipeline, RACI, task board e handoffs.
 - Templates de review, QA e segurança.
 
 ### Critérios de saída
 
-- [ ] Specs prontas para revisão humana.
-- [ ] Dependências entre specs e tickets explícitas.
-- [ ] Donos definidos para todos os tickets.
-- [ ] Pipeline e gates documentados.
-- [ ] Nenhum código implementado.
-- [ ] Aprovação humana para iniciar F1.
+- [x] Specs prontas para revisão humana.
+- [x] Dependências entre specs e tickets explícitas.
+- [x] Donos definidos para todos os tickets.
+- [x] Pipeline e gates documentados.
+- [x] Nenhum código implementado.
+- [x] Aprovação humana para iniciar F1 (foundation).
 
 ---
 
@@ -86,8 +87,9 @@ Criar a base para que um profissional publique um perfil e um cliente possa enco
 - Contas, sessão, confirmação de e-mail, reset e RBAC.
 - Perfil profissional, área, disponibilidade e portfólio básico.
 - Catálogo e sinônimos.
-- Admin mínimo, MFA TOTP e auditoria.
+- Admin mínimo, MFA TOTP + recovery codes e auditoria.
 - Privacidade: consentimento, PII, exportação/exclusão.
+- Hardening: CSRF, rate limit, idempotência, criptografia de localização, paginação admin.
 - Observabilidade: logs, métricas, health e feature flags.
 - Web: cadastro, login, onboarding e perfil.
 

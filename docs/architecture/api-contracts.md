@@ -37,6 +37,14 @@
 | `RATE_LIMITED` | 429 | limite excedido |
 | `PROFILE_INCOMPLETE` | 422 | perfil não publicável |
 | `INVALID_SERVICE_AREA` | 422 | área/raio inválido |
+| `EMAIL_NOT_CONFIRMED` | 403 | e-mail ainda não confirmado |
+| `TOKEN_EXPIRED` | 422 | token expirado |
+| `TOKEN_INVALID` | 422 | token inválido/reutilizado |
+| `INVALID_AVAILABILITY` | 422 | janela de disponibilidade inválida |
+| `INVALID_IMAGE` | 422 | imagem inválida/grande |
+| `INVALID_PASSWORD` | 422 | senha atual incorreta |
+| `CSRF_INVALID` | 403 | CSRF ausente/inválido |
+| `MFA_REQUIRED` | 403 | MFA necessário |
 | `REQUEST_EXPIRED` | 422 | pedido expirado |
 | `INTEREST_LIMIT_REACHED` | 422 | limite de interesses |
 | `CONTACT_PROTECTED` | 403 | contato antes do aceite |
@@ -108,6 +116,14 @@ Revoga a sessão. Resposta `204`.
 { "token": "..." }
 ```
 
+### POST `/v1/auth/resend-confirmation`
+
+```json
+{ "email": "ana@example.test" }
+```
+
+Resposta sempre `202`, sem revelar existência.
+
 ### POST `/v1/auth/password-reset/request`
 
 ```json
@@ -130,6 +146,7 @@ Resposta sempre `202`, sem revelar existência.
 | --- | --- | --- |
 | GET | `/v1/me` | dados da conta autenticada |
 | PATCH | `/v1/me` | nome, preferência de contato, telefone |
+| POST | `/v1/me/password` | trocar senha; revoga as outras sessões |
 | GET | `/v1/me/consents` | consentimentos e versões |
 | POST | `/v1/me/consents/{kind}/revoke` | revogar consentimento |
 | GET | `/v1/me/export` | exportação JSON dos dados |
@@ -377,6 +394,17 @@ Antes do aceite, `contact.visible = false` e `value = null`. O contato completo 
 
 | Método | Rota | Uso |
 | --- | --- | --- |
+| GET | `/v1/admin/professionals` | perfis; cursor, status, q |
+| POST | `/v1/admin/professionals/{id}/suspend` | suspender com motivo/evidência |
+| POST | `/v1/admin/professionals/{id}/reactivate` | reativar |
+| GET | `/v1/admin/categories` | listar categorias |
+| POST | `/v1/admin/categories` | criar categoria |
+| PATCH | `/v1/admin/categories/{id}` | editar categoria |
+| POST | `/v1/admin/categories/{id}/deactivate` | desativar categoria |
+| GET | `/v1/admin/feature-flags` | listar flags |
+| PATCH | `/v1/admin/feature-flags/{key}` | alterar flag com default seguro |
+| GET | `/v1/admin/account-requests` | solicitações de direitos |
+| POST | `/v1/admin/account-requests/{id}/resolve` | resolver solicitação |
 | POST | `/v1/reports` | denunciar |
 | GET | `/v1/notifications` | histórico |
 | POST | `/v1/notifications/{id}/read` | marcar como lida |
@@ -384,7 +412,7 @@ Antes do aceite, `contact.visible = false` e `value = null`. O contato completo 
 | POST | `/v1/admin/reports/{id}/resolve` | resolver |
 | POST | `/v1/admin/moderation-actions` | aplicar ação |
 | POST | `/v1/admin/moderation-actions/{id}/appeal` | recurso |
-| GET | `/v1/admin/audit-events` | auditoria |
+| GET | `/v1/admin/audit-events` | auditoria; cursor, ator, alvo, período |
 | GET | `/v1/admin/fairness/policies` | políticas |
 | POST | `/v1/admin/fairness/policies` | criar política |
 | POST | `/v1/admin/fairness/policies/{id}/simulate` | simular |
@@ -392,7 +420,7 @@ Antes do aceite, `contact.visible = false` e `value = null`. O contato completo 
 | POST | `/v1/admin/fairness/policies/{id}/activate` | ativar |
 | GET | `/v1/admin/fairness/metrics` | métricas |
 
-**Admin exige MFA e autorização por papel.** Toda ação gera `audit_event`.
+**Admin exige MFA e autorização por papel.** Toda ação gera `audit_event` e métrica quando aplicável. Listagens usam cursor e limite.
 
 ---
 

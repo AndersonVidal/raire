@@ -1,13 +1,13 @@
 # Plano de Sprints — RAIRE
 
-**Status:** proposta  
-**Versão:** 1.0  
+**Status:** aprovado para a fundação  
+**Versão:** 1.1  
 **Equipe:** Victor, Anderson, Felipe  
-**Premissa:** 2 semanas por sprint, dedicação parcial. Ajustar após aprovação das specs.
+**Premissa:** 2 semanas por sprint, dedicação parcial. Fundação aprovada em 2026-11-20; demais specs em revisão.
 
 ---
 
-## Sprint 0 — Revisão e aprovação (1 semana)
+## Sprint 0 — Revisão e aprovação (concluído para a fundação)
 
 **Objetivo:** sair de documentação para specs aprovadas.
 
@@ -17,21 +17,21 @@
 | Anderson | revisar personas, web, service-request; decidir Q-08/Q-11–Q-18/Q-25–Q-31 | parecer + copy |
 | Felipe | revisar riscos, segurança, trust; decidir Q-06/Q-09/Q-10/Q-32–Q-43 | parecer + checklist |
 
-**Saída:** specs revisadas, questões bloqueantes com default, pedido de aprovação humana.
+**Saída:** foundation aprovada; decisões Q-01..Q-50 registradas; demais specs seguem em revisão.
 
 ---
 
 ## Sprint 1 — Fundação (F1)
 
-**Objetivo:** conta + perfil publicável.
+**Objetivo:** conta + perfil publicável + hardening de segurança.
 
 | Pessoa | Tickets |
 | --- | --- |
-| Victor | FND-01, FND-02, FND-03, FND-05, FND-06 |
-| Anderson | WEB-01, WEB-02, WEB-03, FND-07, FND-11 |
-| Felipe | FND-08, FND-09, FND-10 |
+| Victor | FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-15, FND-16 |
+| Anderson | WEB-01, WEB-02, WEB-03, FND-07, FND-11, FND-12, FND-18 |
+| Felipe | FND-08, FND-09, FND-10, FND-17, FND-19 |
 
-**Saída:** cadastro → confirmação → perfil → preview; admin suspende; PII protegida; testes verdes.
+**Saída:** cadastro → confirmação → perfil → preview; admin suspende; PII protegida; CSRF/rate limit/criptografia; testes verdes.
 
 ---
 
@@ -41,9 +41,9 @@
 
 | Pessoa | Tickets |
 | --- | --- |
-| Victor | FND-04, FND-14, LCL-01, LCL-02, LCL-03, LCL-06 |
-| Anderson | FND-12, WEB-04, LCL-04, WEB-05, WEB-06 |
-| Felipe | FND-13, WEB-11 (início), LCL-09, LCL-11 |
+| Victor | FND-14, FND-15, FND-16, LCL-01, LCL-02, LCL-03, LCL-06 |
+| Anderson | WEB-04, LCL-04, WEB-05, WEB-06 |
+| Felipe | FND-13, FND-19, WEB-11 (início), LCL-09, LCL-11 |
 
 **Saída:** busca presencial/remota, ranking determinístico, perfil público sem PII, a11y básica.
 

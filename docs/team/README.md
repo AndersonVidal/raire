@@ -39,28 +39,28 @@
 
 ---
 
-## 4. Primeira semana (todos)
+## 4. Primeira semana de implementação
 
 ### Objetivo
 
-Sair de "documentação pronta" para "specs revisadas e plano executável", sem código.
+Iniciar a fundação aprovada, com testes primeiro e evidência.
 
 | Dia | Atividade | Saída |
 | --- | --- | --- |
-| 1 | Ler PRD, pipeline, RACI e specs da sua frente | dúvidas registradas |
-| 2 | Revisar spec da sua frente e critérios de aceite | comentários no `spec.md` |
-| 3 | Resolver questões abertas bloqueantes da sua frente | Q-xx atualizada |
-| 4 | Revisar tickets, dependências e tamanho | task board atualizado |
-| 5 | Reunião de review cruzado | parecer e pendências para aprovação |
+| 1 | Ler PRD, pipeline, RACI e spec foundation | dúvidas registradas |
+| 2 | Criar esqueleto modular e contratos (`FND-01`) | build/health/arquitetura |
+| 3 | Modelo de dados, migrations e seed (`FND-02`) | migration e seed idempotente |
+| 4 | Identidade, sessão, RBAC e rate limit (`FND-03`) | testes de auth |
+| 5 | Review cruzado da fatia | parecer e próximos passos |
 
 ### Critério de saída da semana
 
-- [ ] specs da frente revisadas;
-- [ ] questões bloqueantes com default ou decisão;
-- [ ] tickets refinados e atribuídos;
-- [ ] riscos e evidências esperadas claros;
-- [ ] nenhum código implementado;
-- [ ] pedido de aprovação humana preparado.
+- [ ] `FND-01` e `FND-02` verdes;
+- [ ] `FND-03` iniciado com testes;
+- [ ] evidência em `specs/foundation-platform/evidence/`;
+- [ ] riscos e bloqueios atualizados;
+- [ ] nenhum gate pulado;
+- [ ] PR aberto para review.
 
 ---
 

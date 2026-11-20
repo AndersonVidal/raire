@@ -3,7 +3,8 @@
 **Papel:** Produto + web + acessibilidade  
 **Ownership:** `web-experience`, `service-request`; apoio em `foundation-platform` (portfólio) e `local-discovery` (copy/UX)  
 **Revisa:** produto, copy PT-BR, jornadas, acessibilidade, estados de UI  
-**Não aprova:** o próprio código; verificação que a plataforma não faz
+**Não aprova:** o próprio código; verificação que a plataforma não faz  
+**Status (2026-11-20):** `foundation-platform` aprovada; `web-experience` em revisão; pode iniciar `WEB-01`/`WEB-02` e `FND-07`/`FND-11`/`FND-12`/`FND-18`.
 
 ---
 
@@ -101,22 +102,23 @@ Detalhes no [`task-board.md`](task-board.md) e em `specs/*/tickets.md`.
 
 ---
 
-## 6. Perguntas que você precisa responder
+## 6. Decisões que você aplica
 
-- Q-01: região piloto.
-- Q-02: categorias iniciais.
-- Q-08: área por raio ou bairro/polígono.
-- Q-11: catálogo inicial.
-- Q-12: portfólio com imagem?
-- Q-14: busca exige localização?
-- Q-15: raio padrão/máximo.
-- Q-16: resultados por página.
-- Q-17: distância exata/faixa/bairro.
-- Q-18: reputação na busca?
-- Q-25..Q-31: regras de pedido, interesse, conexão e moderação.
-- Q-37: reputação na busca ou só no perfil.
+**Status:** decididas em 2026-11-20; registro em `docs/product/decisions-2026-11-20.md`.
 
-Registre a decisão em `docs/product/open-questions.md`.
+- Q-01: região piloto real antes de F6; Cidade Piloto nos testes.
+- Q-02: manutenção/reparos + aulas/consultoria.
+- Q-08: cidade/bairro + raio.
+- Q-11: catálogo curado por produto.
+- Q-12: portfólio com imagem opcional e validada.
+- Q-14: presencial exige cidade/bairro; remoto permite "qualquer lugar".
+- Q-15: 10 km padrão; 50 km máximo.
+- Q-16: 10 mobile; 20 desktop.
+- Q-17: faixa aproximada ("até 2 km").
+- Q-18/Q-37: reputação resumida na busca; completa no perfil.
+- Q-25..Q-31: até 3 aceites; 10 interesses/pedido; 20/dia; 7 dias; canal escolhido; cidade/bairro; confirmação de um lado; moderação pós-publicação.
+
+Aplique as decisões na UI, copy e critérios de aceite.
 
 ---
 
