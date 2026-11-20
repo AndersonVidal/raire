@@ -1,0 +1,40 @@
+# Go
+bin/
+dist/
+*.exe
+*.test
+*.out
+coverage.out
+coverage.html
+
+# Banco local e artefatos
+*.db
+*.db-shm
+*.db-wal
+data/
+tmp/
+
+# Ambiente e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node / ferramentas
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+.playwright/
+test-results/
+
+# Editores e SO
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Evidências temporárias
+workspace/*
+!workspace/.gitkeep
+!workspace/README.md
