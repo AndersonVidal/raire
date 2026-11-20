@@ -15,6 +15,7 @@ Este documento é o índice central da base de conhecimento do projeto RAIRE. El
 5. [`docs/team/task-board.md`](team/task-board.md) — tarefas.
 6. [`docs/status/2026-11-20-planning.md`](status/2026-11-20-planning.md) — status detalhado.
 7. [`docs/status/2026-11-20-qa-documental.md`](status/2026-11-20-qa-documental.md) — QA da organização.
+8. [`docs/status/2026-11-20-review-planning.md`](status/2026-11-20-review-planning.md) — review de planejamento.
 
 ---
 

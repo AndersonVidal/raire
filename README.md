@@ -15,7 +15,8 @@ O que está pronto:
 - pipeline de trabalho e divisão de tarefas entre Victor, Anderson e Felipe.
 
 Status detalhado: [docs/status/2026-11-20-planning.md](docs/status/2026-11-20-planning.md).  
-QA documental: [docs/status/2026-11-20-qa-documental.md](docs/status/2026-11-20-qa-documental.md).
+QA documental: [docs/status/2026-11-20-qa-documental.md](docs/status/2026-11-20-qa-documental.md).  
+Review de planejamento: [docs/status/2026-11-20-review-planning.md](docs/status/2026-11-20-review-planning.md).
 
 O que vem depois:
 
