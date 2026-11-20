@@ -14,7 +14,8 @@ O que está pronto:
 - arquitetura, ADRs, segurança, privacidade, métricas e roadmap;
 - pipeline de trabalho e divisão de tarefas entre Victor, Anderson e Felipe.
 
-Status detalhado: [docs/status/2026-11-20-planning.md](docs/status/2026-11-20-planning.md).
+Status detalhado: [docs/status/2026-11-20-planning.md](docs/status/2026-11-20-planning.md).  
+QA documental: [docs/status/2026-11-20-qa-documental.md](docs/status/2026-11-20-qa-documental.md).
 
 O que vem depois:
 

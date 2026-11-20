@@ -14,6 +14,7 @@ Este documento é o índice central da base de conhecimento do projeto RAIRE. El
 4. [`docs/process/pipeline.md`](process/pipeline.md) — pipeline e donos.
 5. [`docs/team/task-board.md`](team/task-board.md) — tarefas.
 6. [`docs/status/2026-11-20-planning.md`](status/2026-11-20-planning.md) — status detalhado.
+7. [`docs/status/2026-11-20-qa-documental.md`](status/2026-11-20-qa-documental.md) — QA da organização.
 
 ---
 
